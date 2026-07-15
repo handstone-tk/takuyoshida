@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="吉田 拓 / Taku Yoshida — 振付家・ダンサー・パフォーマー。Choreographer, dancer, and performer based in Tokyo.">
+<meta property="og:title" content="吉田 拓 / Taku Yoshida">
+<meta property="og:description" content="振付家・ダンサー・パフォーマー。Choreographer, dancer, and performer based in Tokyo.">
+<title>吉田 拓 / Taku Yoshida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Shippori+Antique&family=M+PLUS+1:wght@200;300;400&family=BIZ+UDGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   RESET & BASE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#fafaf8;
+  --text:#0d0d0b;
+  --dim:#9a9890;
+  --line:#e8e8e4;
+  --nav:200px;
+  --nav-bg:#f5f4f1;
+  --mono:'IBM Plex Mono',monospace;
+  --t-fast:0.15s ease;
+  --t-mid:0.25s ease;
+  --sans:'Zen Kaku Gothic New','Noto Sans JP','Helvetica Neue',Arial,sans-serif;
+}
+html{overflow-x:hidden;}
+html,body{height:100%;background:var(--bg);color:var(--text);}
+body{font-family:var(--sans);font-weight:300;font-size:13px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+button{cursor:pointer;border:none;background:none;font-family:inherit;}
+input,textarea,select{font-family:inherit;}
+img{max-width:100%;height:auto;display:block;}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SIDEBAR NAV
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#nav{
+  position:fixed;top:0;left:0;bottom:0;
+  width:var(--nav);
+  border-right:1px solid var(--line);
+  display:flex;flex-direction:column;
+  overflow-y:auto;z-index:50;
+  background:var(--nav-bg);
+}
+.nav-head{
+  padding:1.6rem 1.4rem 1.4rem;
+  border-bottom:1px solid var(--line);
+}
+.nav-head a{
+  font-family:var(--mono);
+  line-height:1.5;display:block;
+}
+.nav-head .name-ja{
+  font-family:var(--mono);font-weight:400;
+  font-size:0.78rem;letter-spacing:0.04em;
+  display:block;
+}
+.nav-head .name-en{
+  font-family:var(--mono);font-weight:300;
+  font-size:0.68rem;color:var(--dim);letter-spacing:0.06em;
+  display:block;margin-top:0.05rem;
+}
+.nav-head .tagline{
+  font-family:var(--mono);font-weight:300;
+  font-size:0.58rem;color:var(--dim);letter-spacing:0.02em;
+  margin-top:0.9rem;line-height:1.65;display:block;
+  border-top:1px solid var(--line);padding-top:0.7rem;
+}
+
+.nav-section{padding:1rem 0;}
+.nav-link{
+  display:block;
+  font-family:var(--mono);font-size:0.62rem;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--dim);padding:0.32rem 1.4rem;
+  transition:color 0.12s;
+}
+.nav-link:hover{color:var(--text);transition:color var(--t-fast);}
+.nav-link.on{
+  color:var(--text);
+  position:relative;
+}
+.nav-link.on::before{
+  content:'';
+  position:absolute;
+  left:0;top:20%;bottom:20%;
+  width:1.5px;
+  background:var(--text);
+}
+.nav-yr-head{
+  font-family:var(--mono);font-size:0.58rem;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--dim);padding:0.55rem 1.4rem 0.2rem;
+  cursor:pointer;display:flex;align-items:center;gap:0.3rem;
+  user-select:none;
+}
+.nav-yr-head::after{content:'▾';font-size:0.5rem;transition:transform 0.18s;}
+.nav-yr-head.shut::after{transform:rotate(-90deg);}
+.nav-yr-links a{
+  display:block;font-family:var(--mono);font-size:0.6rem;
+  letter-spacing:0.04em;color:var(--dim);
+  padding:0.22rem 1.4rem 0.22rem 2rem;
+  line-height:1.5;transition:color 0.12s;
+}
+.nav-yr-links a:hover{color:var(--text);}
+.nav-yr-links a.on{
+  color:var(--text);
+  position:relative;
+}
+.nav-yr-links a.on::before{
+  content:'';
+  position:absolute;
+  left:0;top:15%;bottom:15%;
+  width:1.5px;
+  background:var(--text);
+}
+.nav-foot{
+  margin-top:auto;padding:1rem 1.4rem;
+  border-top:1px solid var(--line);
+  display:flex;gap:0.7rem;align-items:center;
+}
+.lang-btn{
+  font-family:var(--mono);font-size:0.6rem;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--dim);transition:color 0.12s;padding:0;
+}
+.lang-btn.on,.lang-btn:hover{color:var(--text);}
+.nav-div{color:var(--line);font-size:0.7rem;}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   MOBILE HEADER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#mob{
+  display:none;position:fixed;top:0;left:0;right:0;
+  height:48px;z-index:60;background:rgba(250,250,248,0.96);
+  backdrop-filter:blur(4px);border-bottom:1px solid var(--line);
+  padding:0 1.2rem;align-items:center;justify-content:space-between;
+}
+.mob-logo{font-family:var(--mono);font-size:0.75rem;letter-spacing:0.06em;display:flex;flex-direction:column;gap:0.05rem;min-width:0;overflow:hidden;}
+.mob-logo-en{font-family:var(--mono);font-size:0.62rem;font-weight:300;color:var(--dim);letter-spacing:0.06em;}
+.mob-menu{display:flex;flex-direction:column;gap:4px;padding:4px;}
+.mob-menu span{width:18px;height:1px;background:var(--text);display:block;}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   MAIN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#main{margin-left:var(--nav);min-height:100vh;}
+.page{display:none;}
+.page.on{display:block;}
+.inner{padding:3.5rem 4rem 6rem;max-width:1200px;}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   HOME — CATALOGUE SLIDESHOW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#home{position:relative;}
+.slideshow{
+  position:relative;
+  width:100%;
+  min-height:100vh;
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:5rem 3rem 4rem;
+  overflow:hidden;
+  max-width:100vw;
+}
+@media(min-width:901px){.slideshow{min-height:100vh;}}
+.slide{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:100%;
+  max-width:680px;
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.8s ease;
+}
+.slide.active{opacity:1;pointer-events:auto;}
+.slide-img-wrap{
+  width:100%;
+  background:#fff;
+  border:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2.5rem;
+  margin-bottom:1.8rem;
+  min-height:340px;
+}
+.slide-img-wrap img{
+  max-width:100%;
+  max-height:55vh;
+  width:auto;
+  height:auto;
+  display:block;
+  object-fit:contain;
+  filter:grayscale(15%);
+}
+.slide-placeholder{
+  width:100%;height:260px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:0.6rem;
+  letter-spacing:0.14em;color:#b8b4ae;text-transform:uppercase;
+}
+.slide-info{
+  width:100%;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:1rem;
+  padding-top:0.3rem;
+}
+.slide-title-wrap{cursor:pointer;transition:opacity 0.15s;}
+.slide-title-wrap:hover{opacity:0.55;}
+.slide-title{
+  font-family:var(--sans);font-size:1rem;
+  letter-spacing:0.05em;font-weight:200;
+  display:block;line-height:1.4;
+}
+.slide-title-en{
+  font-family:var(--mono);font-size:0.65rem;font-style:italic;
+  letter-spacing:0.06em;font-weight:300;color:var(--dim);
+  display:block;margin-top:0.1rem;
+}
+.slide-meta{
+  font-family:var(--mono);font-size:0.6rem;
+  letter-spacing:0.1em;color:var(--dim);
+  text-transform:uppercase;white-space:nowrap;
+  padding-top:0.15rem;
+}
+/* counter */
+.slide-counter{
+  position:absolute;top:1.5rem;right:2rem;
+  font-family:var(--mono);font-size:0.58rem;
+  letter-spacing:0.12em;color:var(--dim);
+  text-transform:uppercase;
+  display:block;
+}
+/* nav dots */
+.slide-dots{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:row;gap:6px;
+}
+.dot{
+  width:5px;height:5px;border-radius:50%;
+  background:var(--line);
+  cursor:pointer;transition:background 0.2s;border:none;padding:0;
+}
+.dot.on{background:var(--text);}
+/* arrows */
+.arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  font-family:var(--mono);font-size:0.7rem;color:var(--dim);
+  padding:1rem 1.2rem;z-index:5;
+  transition:color 0.15s;
+}
+.arrow:hover{color:var(--text);}
+#arrowL{left:0;}
+#arrowR{right:0;}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   WORK PAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.work-title{
+  font-family:var(--sans);font-weight:200;
+  font-size:clamp(1.2rem,2.5vw,2rem);
+  letter-spacing:0.04em;line-height:1.3;
+  margin-bottom:0.2rem;
+}
+.work-title-en{
+  font-family:var(--mono);font-weight:300;font-style:italic;
+  font-size:0.85rem;color:var(--dim);letter-spacing:0.08em;
+  margin-bottom:1.8rem;
+}
+.work-meta{
+  font-family:var(--mono);font-size:0.6rem;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:2.5rem;
+  display:flex;gap:2rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding-bottom:1.2rem;
+}
+.work-imgs{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));
+  gap:4px;margin-bottom:3rem;
+}
+.work-imgs img{width:100%;display:block;object-fit:cover;background:#f0efec;}
+.work-imgs .ph{display:none;}
+.work-desc{
+  max-width:600px;font-size:0.88rem;line-height:2;
+  color:var(--text);margin-bottom:1.8rem;white-space:pre-line;
+}
+.work-credit{
+  font-family:var(--mono);font-size:0.6rem;letter-spacing:0.08em;
+  color:var(--dim);line-height:2;
+  border-top:1px solid var(--line);padding-top:1rem;
+  max-width:480px;white-space:pre-line;
+}
+.work-link-btn{
+  display:inline-block;margin-top:1.2rem;
+  font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--dim);
+  border-bottom:1px solid var(--line);padding-bottom:1px;
+  transition:color 0.15s,border-color 0.15s;
+}
+.work-link-btn:hover{color:var(--text);border-color:var(--text);}
+.work-pager{
+  display:flex;justify-content:space-between;
+  margin-top:4rem;padding-top:1.2rem;
+  border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:0.6rem;
+  letter-spacing:0.1em;text-transform:uppercase;
+}
+.work-pager a{color:var(--dim);transition:color 0.15s;}
+.work-pager a:hover{color:var(--text);}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PAGE TITLES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.pg-title{
+  font-family:var(--mono);font-weight:300;
+  font-size:clamp(0.72rem,1.2vw,0.88rem);
+  letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--dim);
+  margin-bottom:3rem;padding-bottom:1rem;
+  border-bottom:1px solid var(--line);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ABOUT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* ページ全体のコンテンツ幅を制限 */
+.about-content-wrap{
+  max-width:860px;
+}
+
+/* 写真 + テキスト の横並びレイアウト */
+.about-bio-grid{
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:3.5rem;
+  align-items:start;
+  margin-bottom:3rem;
+}
+
+/* 写真がない場合はテキストを全幅に */
+.about-bio-grid.no-photo{
+  grid-template-columns:1fr;
+}
+
+.about-main p{
+  font-size:0.88rem;line-height:2.15;
+  color:var(--text);margin-bottom:1.6rem;font-weight:300;
+  max-width:64ch;
+}
+.about-dl dt{
+  font-family:var(--mono);font-size:0.55rem;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--dim);margin-top:1.4rem;margin-bottom:0.25rem;
+}
+.about-dl dt:first-child{margin-top:0;}
+.about-dl dd{font-size:0.82rem;color:var(--text);line-height:1.75;}
+.about-dl a{
+  text-underline-offset:3px;
+  text-decoration:underline;
+  text-decoration-color:var(--line);
+  color:var(--text);
+  transition:text-decoration-color var(--t-fast);
+}
+.about-dl a:hover{text-decoration-color:var(--text);}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CV
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.cv-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;}
+.cv-sub{
+  font-family:var(--mono);font-size:0.58rem;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--dim);
+  display:block;margin-bottom:1.5rem;
+}
+.tl{padding-left:1.5rem;border-left:1px solid var(--line);}
+.tl-item{position:relative;padding-bottom:1.8rem;}
+.tl-item::before{
+  content:'';position:absolute;left:-1.5rem;top:0.45rem;
+  width:4px;height:4px;background:var(--dim);border-radius:50%;
+  transform:translateX(-2px);
+}
+.tl-yr{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;color:var(--dim);margin-bottom:0.1rem;}
+.tl-tx{font-size:0.84rem;color:var(--text);line-height:1.75;}
+.grants{list-style:none;}
+.grants li{
+  display:flex;gap:1.5rem;padding:0.8rem 0;
+  border-bottom:1px solid var(--line);font-size:0.84rem;
+}
+.grants li:first-child{border-top:1px solid var(--line);}
+.g-yr{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;color:var(--dim);min-width:2.8rem;padding-top:0.1rem;}
+.g-body{color:var(--text);line-height:1.7;}
+.g-org{font-family:var(--mono);font-size:0.55rem;color:var(--dim);letter-spacing:0.08em;margin-left:0.4rem;}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CONTACT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;max-width:800px;}
+.c-info p{font-size:0.86rem;line-height:2;color:#444;margin-bottom:1.8rem;}
+.c-val a{text-underline-offset:3px;text-decoration:underline;}
+.cform-field{
+  width:100%;background:transparent;
+  border:none;border-bottom:1px solid var(--line);
+  color:var(--text);padding:0.65rem 0;
+  font-size:0.84rem;margin-bottom:1rem;
+  outline:none;transition:border-color 0.15s;
+}
+.cform-field:focus{border-bottom-color:var(--text);}
+.cform-field::placeholder{color:#bcb8b2;font-size:0.82rem;}
+textarea.cform-field{height:100px;resize:vertical;}
+.cform-btn{
+  font-family:var(--mono);font-size:0.6rem;
+  letter-spacing:0.14em;text-transform:uppercase;
+  padding:0.7rem 2.2rem;background:transparent;color:var(--text);
+  border:1px solid var(--text);
+  transition:background var(--t-fast),color var(--t-fast);
+  margin-top:0.6rem;cursor:pointer;
+}
+.cform-btn:hover{background:var(--text);color:var(--bg);}
+.cform-btn:focus-visible{outline:1px solid var(--text);outline-offset:3px;}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FOOTER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#foot{
+  margin-left:var(--nav);padding:1rem 4rem;
+  border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:0.56rem;
+  letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);
+  display:flex;justify-content:space-between;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ADMIN APP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#admin-overlay{
+  display:none;position:fixed;inset:0;z-index:200;
+  background:#fafaf8;overflow-y:auto;
+}
+#admin-overlay.on{display:block;}
+#admin-bar{
+  position:sticky;top:0;background:#000;color:#fff;
+  padding:0 2rem;height:48px;display:flex;align-items:center;
+  justify-content:space-between;z-index:10;
+}
+#admin-bar h1{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:400;}
+#admin-close{
+  font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;
+  text-transform:uppercase;color:#999;transition:color 0.15s;
+}
+#admin-close:hover{color:#fff;}
+#admin-body{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 48px);}
+#admin-sidebar{
+  border-right:1px solid var(--line);padding:1.5rem 0;
+  background:#f0efec;
+}
+.adm-nav-btn{
+  display:block;width:100%;text-align:left;
+  font-family:var(--mono);font-size:0.62rem;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--dim);
+  padding:0.55rem 1.5rem;transition:all 0.12s;
+}
+.adm-nav-btn:hover,.adm-nav-btn.on{color:var(--text);background:#f0f0f0;}
+#admin-content{padding:2rem 3rem;}
+.adm-section{display:none;}
+.adm-section.on{display:block;}
+.adm-title{
+  font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;
+  text-transform:uppercase;margin-bottom:2rem;
+  padding-bottom:0.8rem;border-bottom:1px solid var(--line);
+}
+/* admin form elements */
+.adm-row{margin-bottom:1.2rem;}
+.adm-label{
+  font-family:var(--mono);font-size:0.58rem;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--dim);display:block;margin-bottom:0.3rem;
+}
+.adm-input{
+  width:100%;padding:0.6rem 0.8rem;
+  border:1px solid var(--line);background:#ffffff;
+  font-size:0.82rem;font-family:var(--sans);
+  outline:none;transition:border-color 0.15s;color:var(--text);
+}
+.adm-input:focus{border-color:var(--text);}
+.adm-textarea{height:90px;resize:vertical;}
+.adm-btn{
+  font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;
+  text-transform:uppercase;padding:0.6rem 1.5rem;
+  background:var(--text);color:#fff;transition:opacity 0.15s;
+}
+.adm-btn:hover{opacity:0.75;}
+.adm-btn-ghost{background:#ffffff;color:var(--text);border:1px solid var(--line);}
+.adm-btn-ghost:hover{background:#f5f5f5;opacity:1;}
+.adm-btn-danger{background:#cc0000;}
+/* work list in admin */
+.adm-work-list{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:2rem;}
+.adm-work-row{
+  background:#fafaf8;padding:0.9rem 1rem;
+  display:flex;align-items:center;gap:1rem;
+}
+.adm-work-row:hover{background:#f0efec;}
+.adm-work-name{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.04em;flex:1;}
+.adm-work-yr{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.08em;color:var(--dim);min-width:3.5rem;}
+.adm-work-tag{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.08em;color:var(--dim);min-width:7rem;}
+.adm-work-btns{display:flex;gap:0.5rem;}
+.adm-work-btns button{
+  font-family:var(--mono);font-size:0.55rem;letter-spacing:0.1em;
+  text-transform:uppercase;padding:0.3rem 0.7rem;
+  border:1px solid var(--line);background:#fff;
+  color:var(--dim);transition:all 0.12s;
+}
+.adm-work-btns button:hover{border-color:var(--text);color:var(--text);}
+/* edit panel */
+#work-edit-panel{background:#f0efec;padding:1.5rem;border:1px solid var(--line);margin-bottom:2rem;display:none;}
+#work-edit-panel.on{display:block;}
+.adm-grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+
+
+.adm-img-entry input{flex:1;}
+.adm-img-entry button{
+  font-family:var(--mono);font-size:0.55rem;letter-spacing:0.08em;
+  padding:0.35rem 0.6rem;border:1px solid var(--line);
+  color:var(--dim);background:#fff;
+}
+.adm-img-entry button:hover{color:#cc0000;border-color:#cc0000;}
+.adm-tags-row{display:flex;flex-wrap:wrap;gap:0.5rem;}
+.adm-tag-check{display:flex;align-items:center;gap:0.3rem;cursor:pointer;}
+.adm-tag-check input{cursor:pointer;}
+.adm-tag-check span{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.08em;color:#444;}
+/* notice */
+.adm-notice{
+  font-family:var(--mono);font-size:0.6rem;letter-spacing:0.08em;
+  padding:0.6rem 0.9rem;background:#f0f0f0;color:#555;
+  margin-bottom:1.5rem;border-left:3px solid #000;
+}
+/* profile editor */
+.profile-textarea{height:130px;}
+/* page-level edit shortcut */
+.page-edit-btn{
+  position:fixed;bottom:2rem;right:2rem;
+  width:40px;height:40px;border-radius:50%;
+  background:var(--text);color:var(--bg);
+  font-size:0.85rem;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 8px rgba(0,0,0,0.18);
+  z-index:30;transition:opacity 0.2s;
+  border:none;cursor:pointer;
+}
+.page-edit-btn:hover{opacity:0.7;}
+
+/* ── FONT SWITCHER ── */
+#font-switcher{
+  position:fixed;bottom:1.2rem;right:1.2rem;
+  z-index:200;display:none;
+  font-family:var(--mono);font-size:0.55rem;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--dim);
+  gap:0.5rem;align-items:center;flex-wrap:wrap;
+  background:#fafaf8;padding:0.5rem 0.9rem;
+  border:1px solid var(--text);
+  box-shadow:0 2px 8px rgba(0,0,0,0.12);
+}
+#font-switcher.visible{display:flex;}
+.fsw-btn{
+  font-family:var(--mono);font-size:0.55rem;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--dim);
+  border:1px solid transparent;padding:0.2rem 0.5rem;
+  transition:all 0.15s;background:none;
+}
+.fsw-btn:hover,.fsw-btn.on{color:var(--text);border-color:var(--line);}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   RESPONSIVE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* ── タブレット / モバイル（〜900px） ── */
+@media(max-width:900px){
+  :root{--nav:0px;}
+  #nav{display:none;width:240px;z-index:80;}
+  #nav.open{display:flex;}
+  #mob{display:flex;}
+  #main{margin-left:0;padding-top:48px;}
+  #foot{margin-left:0;padding:1rem 1.5rem;}
+  .inner{padding:2.5rem 1.5rem 5rem;max-width:100%;}
+  .about-bio-grid{grid-template-columns:1fr;gap:2rem;}
+  .about-bio-grid.no-photo{grid-template-columns:1fr;}
+  .about-photo-wrap{position:static;max-width:200px;}
+  .about-main p{max-width:100%;}
+  .cv-grid{grid-template-columns:1fr;gap:3rem;}
+  .contact-grid{grid-template-columns:1fr;gap:2.5rem;}
+  #admin-body{grid-template-columns:1fr;}
+  #admin-sidebar{display:flex;flex-wrap:wrap;padding:0.8rem;}
+  #admin-content{padding:1.5rem;}
+  .adm-grid2{grid-template-columns:1fr;}
+  .slideshow{padding:5rem 1.5rem 4rem;}
+  /* タブレットでwork-imgsを1列に */
+  .work-imgs{grid-template-columns:1fr;}
+}
+
+/* ── スマートフォン（〜600px） ── */
+@media(max-width:600px){
+  .inner{padding:2rem 1.2rem 4rem;}
+
+  /* タイポグラフィ — スマホ最適化 */
+  body{font-size:14px;}
+  .pg-title{font-size:0.6rem;letter-spacing:0.18em;margin-bottom:2rem;padding-bottom:0.8rem;}
+
+  /* ナビ — フルスクリーンオーバーレイ */
+  #nav.open{width:100%;max-width:320px;}
+
+  /* スライドショー */
+  .slideshow{padding:4rem 1.2rem 3rem;}
+  .slide-title{font-size:clamp(1.2rem,6vw,1.8rem);}
+
+  /* Biography */
+  .about-bio-grid{gap:1.5rem;}
+  .about-photo-wrap{max-width:140px;}
+  .about-main p{font-size:0.85rem;line-height:2.0;}
+  .about-dl dt{font-size:0.52rem;}
+  .about-dl dd{font-size:0.8rem;}
+
+  /* CV */
+  .tl-item{grid-template-columns:3.5rem 1fr;gap:0.75rem;}
+  .tl-yr{font-size:0.55rem;}
+  .tl-tx{font-size:0.82rem;}
+
+  /* アーカイブ */
+  .arch-btn{
+    font-size:0.56rem;
+    padding:0.42rem 0.75rem;
+    /* タップしやすくする最小高さ */
+    min-height:36px;
+    display:inline-flex;align-items:center;
+  }
+  #filterBar{gap:0.3rem;}
+  .arch-row{grid-template-columns:3rem 1fr;gap:0.5rem;}
+  .arch-title-en,.arch-tags{display:none;}
+  .arch-title{font-size:0.85rem;}
+
+  /* Contact フォーム */
+  .cform-field{font-size:0.85rem;padding:0.7rem 0;}
+  .cform-btn{
+    width:100%;
+    padding:0.85rem;
+    font-size:0.58rem;
+    min-height:44px; /* iOS HIG 推奨タップターゲット */
+  }
+
+  /* Work detail */
+  .work-imgs{gap:2px;}
+  .work-desc{font-size:0.85rem;}
+  .work-credit{font-size:0.78rem;}
+}
+
+/* ── 極小スマホ（〜380px / iPhone SE等） ── */
+@media(max-width:380px){
+  .inner{padding:1.5rem 1rem 3.5rem;}
+  .mob-logo{font-size:0.7rem;}
+  #mob{padding:0 1rem;}
+  .arch-btn{font-size:0.52rem;padding:0.38rem 0.65rem;}
+  .slideshow{padding:3.5rem 1rem 2.5rem;}
+}
+
+/* ── ARCHIVE LIST ── */
+.arch-btn{
+  font-family:var(--mono);font-size:0.58rem;
+  letter-spacing:0.1em;text-transform:uppercase;
+  padding:0.38rem 0.9rem;
+  border:1px solid var(--line);background:transparent;
+  color:var(--dim);cursor:pointer;
+  transition:color var(--t-fast),border-color var(--t-fast);
+}
+.arch-btn:hover,.arch-btn.on{
+  background:transparent;color:var(--text);border-color:var(--text);
+}
+.arch-btn:focus-visible{outline:1px solid var(--text);outline-offset:2px;}
+.arch-row{
+  display:grid;
+  grid-template-columns:3.5rem 1fr auto auto;
+  align-items:baseline;
+  gap:1rem;
+  padding:0.85rem 0;
+  border-bottom:1px solid var(--line);
+  cursor:pointer;
+  transition:opacity 0.15s;
+}
+.arch-row:first-child{border-top:1px solid var(--line);}
+.arch-row:hover{opacity:0.5;transition:opacity var(--t-fast);}
+.arch-yr{
+  font-family:var(--mono);font-size:0.6rem;
+  letter-spacing:0.1em;color:var(--dim);
+  white-space:nowrap;
+}
+.arch-title{
+  font-family:var(--sans);font-weight:300;
+  font-size:0.9rem;letter-spacing:0.04em;
+  color:var(--text);
+}
+.arch-title-en{
+  font-family:var(--mono);font-size:0.65rem;font-style:italic;
+  color:var(--dim);letter-spacing:0.04em;
+  white-space:nowrap;
+}
+.arch-tags{
+  font-family:var(--mono);font-size:0.58rem;
+  letter-spacing:0.08em;color:var(--dim);
+  text-align:right;white-space:nowrap;
+}
+/* arch-row 600px → 上のメディアクエリに統合済み */
+
+/* ── PROFILE PHOTO ── */
+.about-photo-wrap{
+  width:100%;
+  position:sticky;top:2rem; /* スクロール時に写真が追従 */
+}
+.about-photo-wrap img{
+  width:100%;display:block;
+  aspect-ratio:3/4;object-fit:cover;
+  filter:grayscale(8%);
+}
+.about-photo-caption{
+  font-family:var(--mono);font-size:0.52rem;
+  letter-spacing:0.1em;color:var(--dim);
+  text-transform:uppercase;margin-top:0.5rem;
+}
+
+/* ── AUTO TRANSLATION BADGE ── */
+.auto-translated{
+  display:inline-block;
+  font-family:var(--mono);font-size:0.5rem;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--dim);border:1px solid var(--line);
+  padding:0.15rem 0.4rem;margin-left:0.5rem;
+  vertical-align:middle;opacity:0.7;
+}
+.adm-translate-btn{
+  font-family:var(--mono);font-size:0.58rem;
+  letter-spacing:0.1em;text-transform:uppercase;
+  padding:0.35rem 0.9rem;
+  border:1px solid var(--line);background:transparent;
+  color:var(--dim);cursor:pointer;
+  transition:color var(--t-fast),border-color var(--t-fast);
+}
+.adm-translate-btn:hover{color:var(--text);border-color:var(--text);}
+.adm-translate-btn:disabled{opacity:0.4;cursor:wait;}
+</style>
+</head>
+<body>
+
+<!-- ═══════ SIDEBAR ═══════ -->
+<nav id="nav">
+  <div class="nav-head">
+    <a href="#" onclick="go('home');return false;">
+      <span class="name-ja">吉田 拓</span><span class="name-en">Taku Yoshida</span>
+    </a>
+    <span class="tagline">body practices<br>(often categorized as<br>dance, performance,<br>or choreography)</span>
+  </div>
+  <div class="nav-section">
+    <a class="nav-link" id="nl-news" href="https://www.instagram.com/ytaku/" target="_blank" rel="noopener">News</a>
+    <a class="nav-link" id="nl-note" href="https://note.com/takuyoshida_" target="_blank" rel="noopener">Note</a>
+    <a class="nav-link" id="nl-about" href="#" onclick="go('about');return false;">Biography</a>
+    <a class="nav-link" id="nl-contact" href="#" onclick="go('contact');return false;">Contact</a>
+  </div>
+  <div id="nav-works" style="flex:1;overflow-y:auto;"></div>
+  <div class="nav-foot">
+    <button class="lang-btn on" id="lb-ja" onclick="setLang('ja')">JA</button>
+    <span class="nav-div">|</span>
+    <button class="lang-btn" id="lb-en" onclick="setLang('en')">EN</button>
+    <span style="flex:1;"></span>
+    <button class="lang-btn" style="font-size:0.55rem;" id="edit-btn" onclick="authAdmin()">EDIT</button>
+  </div>
+</nav>
+
+<!-- ═══════ MOBILE HEADER ═══════ -->
+<div id="mob">
+  <span class="mob-logo">吉田 拓<span class="mob-logo-en">Taku Yoshida</span></span>
+  <button class="mob-menu" onclick="toggleMobNav()" aria-label="menu">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
+<!-- ═══════ MAIN ═══════ -->
+<div id="main">
+
+  <!-- HOME — SLIDESHOW -->
+  <div class="page on" id="page-home">
+    <div class="slideshow" id="slideshow">
+      <!-- filled by JS -->
+      <div class="slide-counter" id="slide-counter"></div>
+      <button class="arrow" id="arrowL" onclick="slidePrev()">←</button>
+      <button class="arrow" id="arrowR" onclick="slideNext()">→</button>
+      <div class="slide-dots" id="dots"></div>
+    </div>
+  </div>
+
+  <!-- WORK -->
+  <div class="page" id="page-work">
+    <div class="inner" id="work-content"></div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="page" id="page-about">
+    <div class="inner">
+      <button class="page-edit-btn" onclick="authAdmin('profile')" title="このページを編集">✏</button>
+      <div class="about-content-wrap">
+        <div class="pg-title" id="about-h">Biography</div>
+        <!-- 写真 + テキスト -->
+        <div class="about-bio-grid" id="about-bio-grid">
+          <div id="about-photo"></div>
+          <div>
+            <div class="about-main" id="about-body"></div>
+            <dl class="about-dl" id="about-dl" style="margin-top:2rem;"></dl>
+          </div>
+        </div>
+        <div class="cv-grid" id="cv-body" style="margin-top:4rem;"></div>
+      </div>
+
+      <!-- ARCHIVE / WORKS LIST -->
+      <div style="margin-top:4rem;">
+        <div class="pg-title" id="archive-h" style="margin-bottom:2rem;">Archive</div>
+        <div id="filterBar" style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:2rem;"></div>
+        <div id="worksGrid"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- CONTACT -->
+  <div class="page" id="page-contact">
+    <div class="inner">
+      <button class="page-edit-btn" onclick="authAdmin('contact')" title="このページを編集">✏</button>
+      <div class="pg-title" id="contact-h">Contact</div>
+      <div style="max-width:min(520px,100%);">
+        <p id="contact-desc" style="font-size:0.85rem;line-height:1.9;color:var(--text);margin-bottom:2.5rem;font-weight:300;"></p>
+        <form onsubmit="submitContact(event)" id="contact-form">
+          <input class="cform-field" id="cf-name" type="text" placeholder="Name / お名前" required>
+          <input class="cform-field" id="cf-email" type="email" placeholder="Email" required>
+          <input class="cform-field" id="cf-subj" type="text" placeholder="Subject / 件名">
+          <textarea class="cform-field" id="cf-msg" placeholder="Message / メッセージ" required></textarea>
+          <button class="cform-btn" type="submit" id="cf-btn">Send / 送信</button>
+        </form>
+        <p id="cf-ok" style="display:none;font-family:var(--mono);font-size:0.6rem;letter-spacing:0.08em;color:var(--dim);margin-top:0.8rem;"></p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<div id="foot">
+  <span id="foot-copy">© 2025 吉田 拓 / Taku Yoshida — Tokyo</span>
+
+</div>
+
+<!-- ═══════════════════════════════════════════
+   ADMIN APP
+═══════════════════════════════════════════ -->
+<div id="admin-overlay">
+  <div id="admin-bar">
+    <h1>サイト管理 / Site Editor</h1>
+    <button id="admin-close" onclick="closeAdmin()">× Close</button>
+  </div>
+  <div id="admin-body">
+    <div id="admin-sidebar">
+      <button class="adm-nav-btn on" data-sec="works" onclick="admTab(this,'works')">Works</button>
+      <button class="adm-nav-btn" data-sec="profile" onclick="admTab(this,'profile')">Biography &amp; CV</button>
+      <button class="adm-nav-btn" data-sec="contact-edit" onclick="admTab(this,'contact-edit')">Contact</button>
+      <button class="adm-nav-btn" data-sec="export" onclick="admTab(this,'export')">Export / Import</button>
+    </div>
+    <div id="admin-content">
+
+      <!-- WORKS SECTION -->
+      <div class="adm-section on" id="adm-works">
+        <div class="adm-title">Works</div>
+        <div class="adm-notice">作品を選択して編集、または新規追加してください。変更は「Save」ボタンを押した時点でサイトに反映されます。</div>
+        <div style="display:flex;gap:0.6rem;margin-bottom:1.5rem;flex-wrap:wrap;">
+          <button class="adm-btn" onclick="startNewWork()">+ New Work</button>
+          <button class="adm-translate-btn" onclick="translateAllWorks(this)" id="btn-translate-all">⟳ 未翻訳の作品を一括翻訳</button>
+        </div>
+        <div id="translate-all-msg" style="font-family:var(--mono);font-size:0.58rem;color:var(--dim);margin-bottom:1rem;display:none;"></div>
+        <div id="work-edit-panel">
+          <div class="adm-grid2">
+            <div>
+              <div class="adm-row"><label class="adm-label">Year</label><input class="adm-input" id="we-year" placeholder="2025"></div>
+              <div class="adm-row"><label class="adm-label">Title (日本語)</label><input class="adm-input" id="we-titleJa" placeholder="作品タイトル"></div>
+              <div class="adm-row"><label class="adm-label">Title (English)</label><input class="adm-input" id="we-titleEn" placeholder="Work Title"></div>
+              <div class="adm-row"><label class="adm-label">Location / 会場</label><input class="adm-input" id="we-loc" placeholder="会場名（省略可）"></div>
+              <div class="adm-row"><label class="adm-label">External Link</label><input class="adm-input" id="we-link" placeholder="https://...（映像・資料URL、省略可）"></div>
+            </div>
+            <div>
+              <div class="adm-row">
+                <label class="adm-label">Category Tags</label>
+                <div class="adm-tags-row">
+                  <label class="adm-tag-check"><input type="checkbox" value="works" id="tag-works"><span>Works</span></label>
+                  <label class="adm-tag-check"><input type="checkbox" value="social" id="tag-social"><span>Social Choreography</span></label>
+                  <label class="adm-tag-check"><input type="checkbox" value="collaborative" id="tag-collaborative"><span>Collaborative Practice</span></label>
+                  <label class="adm-tag-check"><input type="checkbox" value="participatory" id="tag-participatory"><span>Participatory</span></label>
+                  <label class="adm-tag-check"><input type="checkbox" value="organization" id="tag-organization"><span>Curation / Editing</span></label>
+                </div>
+              </div>
+              <div class="adm-row"><label class="adm-label">Images (URLs, 1行1枚)</label><textarea class="adm-input adm-textarea" id="we-imgs" placeholder="https://example.com/photo1.jpg&#10;https://example.com/photo2.jpg"></textarea></div>
+            </div>
+          </div>
+          <div class="adm-row"><label class="adm-label">Description (日本語)</label><textarea class="adm-input adm-textarea" id="we-descJa" placeholder="作品説明（日本語）"></textarea></div>
+          <div class="adm-row"><label class="adm-label">Description (English) <button class="adm-translate-btn" onclick="translateField('we-descJa','we-descEn',this)" type="button">⟳ Auto-translate</button></label><textarea class="adm-input adm-textarea" id="we-descEn" placeholder="Work description (English)"></textarea></div>
+          <div class="adm-row"><label class="adm-label">Title (English) は上のフォームから、Creditの英語化が必要な場合：<button class="adm-translate-btn" onclick="translateField('we-credit','we-credit',this,true)" type="button">⟳ Translate Credit</button></label></div>
+          <div class="adm-row"><label class="adm-label">Credit / クレジット</label><textarea class="adm-input" id="we-credit" placeholder="振付・出演｜吉田拓&#10;助成｜アーツカウンシル東京" style="height:70px;"></textarea></div>
+          <div style="display:flex;gap:0.8rem;margin-top:1rem;">
+            <button class="adm-btn" onclick="saveWork()">Save Work</button>
+            <button class="adm-btn adm-btn-ghost" onclick="cancelEdit()">Cancel</button>
+            <button class="adm-btn adm-btn-danger" id="del-btn" onclick="deleteWork()" style="margin-left:auto;">Delete</button>
+          </div>
+          <div id="we-msg" style="margin-top:0.8rem;font-family:var(--mono);font-size:0.6rem;display:none;"></div>
+        </div>
+        <div class="adm-work-list" id="adm-work-list"></div>
+      </div>
+
+      <!-- PROFILE SECTION -->
+      <div class="adm-section" id="adm-profile">
+        <div class="adm-title">Biography</div>
+        <div class="adm-notice">プロフィール文を編集します。日本語と英語それぞれ入力してください（段落は改行2回で区切ります）。</div>
+        <div class="adm-row"><label class="adm-label">Profile Photo URL</label><input class="adm-input" id="prof-photo" type="url" placeholder="https://... (Google Drive direct URL など)"></div>
+                <div class="adm-row"><label class="adm-label">Photo Credit（例：roun kim）</label><input class="adm-input" id="prof-photo-credit" type="text" placeholder="photographer name"></div>
+                <div class="adm-row"><label class="adm-label">拠点 ラベル（日本語）</label><input class="adm-input" id="prof-base-label-ja" type="text" placeholder="拠点"></div>
+        <div class="adm-row"><label class="adm-label">Base label (English)</label><input class="adm-input" id="prof-base-label-en" type="text" placeholder="Base"></div>
+        <div class="adm-row"><label class="adm-label">拠点（日本語）</label><input class="adm-input" id="prof-base-ja" type="text" placeholder="東京"></div>
+        <div class="adm-row"><label class="adm-label">Base (English)</label><input class="adm-input" id="prof-base-en" type="text" placeholder="Tokyo"></div>
+        <div class="adm-row"><label class="adm-label">プラットフォーム ラベル（日本語）</label><input class="adm-input" id="prof-platforms-label-ja" type="text" placeholder="プラットフォーム"></div>
+        <div class="adm-row"><label class="adm-label">Platforms label (English)</label><input class="adm-input" id="prof-platforms-label-en" type="text" placeholder="Platforms"></div>
+        <div class="adm-row"><label class="adm-label">プラットフォーム（1行1件）</label><textarea class="adm-input" id="prof-platforms" style="height:70px;font-size:0.78rem;" placeholder="Stilllive (2021–)&#10;pito (2024–)"></textarea></div>
+        <div class="adm-row"><label class="adm-label">所属 ラベル（日本語）</label><input class="adm-input" id="prof-affiliation-label-ja" type="text" placeholder="所属"></div>
+        <div class="adm-row"><label class="adm-label">Affiliation label (English)</label><input class="adm-input" id="prof-affiliation-label-en" type="text" placeholder="Affiliation"></div>
+        <div class="adm-row"><label class="adm-label">所属 / Affiliation</label><input class="adm-input" id="prof-affiliation" type="text" placeholder="Dance Base Yokohama"></div>
+        <div class="adm-row"><label class="adm-label">Email</label><input class="adm-input" id="prof-email" type="email" placeholder="yourname@gmail.com"></div>
+        <div class="adm-row"><label class="adm-label">Instagram（@なし）</label><input class="adm-input" id="prof-instagram" type="text" placeholder="ytaku"></div>
+        <div class="adm-row"><label class="adm-label">依頼・お問い合わせ文（日本語）</label><textarea class="adm-input" id="prof-avail-ja" style="height:70px;font-size:0.78rem;"></textarea></div>
+        <div class="adm-row"><label class="adm-label">Availability text (English)</label><textarea class="adm-input" id="prof-avail-en" style="height:70px;font-size:0.78rem;"></textarea></div>
+        <div class="adm-row"><label class="adm-label">Profile (日本語)</label><textarea class="adm-input profile-textarea" id="prof-ja" style="height:200px;"></textarea></div>
+        <div class="adm-row"><label class="adm-label">Profile (English) <button class="adm-translate-btn" onclick="translateField('prof-ja','prof-en',this)" type="button">⟳ Auto-translate from 日本語</button></label><textarea class="adm-input profile-textarea" id="prof-en" style="height:200px;"></textarea></div>
+        <button class="adm-btn" onclick="saveProfile()" style="margin-top:0.5rem;">Save Profile</button>
+        <div id="prof-msg" style="margin-top:0.8rem;font-family:var(--mono);font-size:0.6rem;display:none;"></div>
+        <hr style="border:none;border-top:1px solid var(--line);margin:2rem 0;">
+        <div class="adm-title" style="margin-bottom:1.5rem;">CV / Grants</div>
+        <div class="adm-notice">経歴・助成実績を編集します。1行に1エントリ、形式：年[TAB]日本語[TAB]English</div>
+        <div class="adm-row"><label class="adm-label">Timeline</label><textarea class="adm-input" id="cv-tl" style="height:180px;font-family:var(--mono);font-size:0.72rem;"></textarea></div>
+        <div class="adm-row"><label class="adm-label">Grants (年[TAB]日本語[TAB]English[TAB]助成機関)</label><textarea class="adm-input" id="cv-gr" style="height:130px;font-family:var(--mono);font-size:0.72rem;"></textarea></div>
+              <div class="adm-row"><label class="adm-label">講義・インタビュー（年&#9;日本語&#9;English&#9;URL）</label><textarea class="adm-input" id="cv-lec" style="height:90px;font-family:var(--mono);font-size:0.7rem;" placeholder="2025&#9;明治学院大学 ゲスト講師&#9;Guest Lecturer"></textarea></div>
+        <button class="adm-btn" onclick="saveCV()">Save CV</button>
+        <div id="cv-msg" style="margin-top:0.8rem;font-family:var(--mono);font-size:0.6rem;display:none;"></div>
+      </div>
+
+      <!-- CV SECTION (hidden, merged above) -->
+
+
+      <!-- CONTACT EDIT SECTION -->
+      <div class="adm-section" id="adm-contact-edit">
+        <div class="adm-title">Contact</div>
+        <div class="adm-notice">お問い合わせページのメッセージ文を編集します。</div>
+        <div class="adm-row"><label class="adm-label">説明文（日本語）</label><textarea class="adm-input" id="ct-ja" style="height:80px;"></textarea></div>
+        <div class="adm-row"><label class="adm-label">Description (English)</label><textarea class="adm-input" id="ct-en" style="height:80px;"></textarea></div>
+        <button class="adm-btn" onclick="saveContactText()" style="margin-top:0.5rem;">Save</button>
+        <div id="ct-msg" style="margin-top:0.8rem;font-family:var(--mono);font-size:0.6rem;display:none;"></div>
+      </div>
+
+      <!-- EXPORT SECTION -->
+      <div class="adm-section" id="adm-export">
+        <div class="adm-title">Export / Import</div>
+        <div class="adm-notice">すべてのデータをJSONファイルとして書き出せます。バックアップやサイトデータの移行に使用してください。HTMLファイルを新たに生成して編集内容を保存することもできます。</div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.8rem;margin-bottom:2rem;">
+          <button class="adm-btn" onclick="exportJSON()">Export JSON</button>
+          <button class="adm-btn adm-btn-ghost" onclick="document.getElementById('imp-file').click()">Import JSON</button>
+          <input type="file" id="imp-file" accept=".json" style="display:none;" onchange="importJSON(event)">
+          <button class="adm-btn" onclick="generateHTML()">Generate Updated HTML</button>
+        </div>
+        <div id="exp-msg" style="font-family:var(--mono);font-size:0.6rem;color:var(--dim);"></div>
+        <div class="adm-row" style="margin-top:2rem;"><label class="adm-label">または JSON を直接貼り付けて Import</label><textarea class="adm-input" id="imp-text" style="height:120px;font-family:var(--mono);font-size:0.68rem;" placeholder='{"works":[...],"profile":{...},...}'></textarea></div>
+        <button class="adm-btn adm-btn-ghost" onclick="importFromText()">Import from text</button>
+      </div>
+
+    </div><!-- /admin-content -->
+  </div><!-- /admin-body -->
+</div><!-- /admin-overlay -->
+
+<script>
+// ═══════════════════════════════════════════════════════════
+//  DATA STORE  (initial / default values)
+// ═══════════════════════════════════════════════════════════
+let DATA = {
+  works:JSON.parse("[{\"slug\": \"henro\", \"year\": \"2025\", \"titleJa\": \"\u7de8\u8def\", \"titleEn\": \"HENRO\", \"descJa\": \"\u8a00\u8449\u3092\u4f7f\u308f\u305a\u306b\u898b\u77e5\u3089\u306c\u4eba\u306830\u5206\u6b69\u884c\u3092\u5171\u306b\u3059\u308b\u53c2\u52a0\u578b\u30d1\u30d5\u30a9\u30fc\u30de\u30f3\u30b9\u3002\u65e5\u672c\u3067\u521d\u3081\u3066\u5275\u4f5c\u3055\u308c\u305f\u30bd\u30fc\u30b7\u30e3\u30eb\u30fb\u30b3\u30ec\u30aa\u30b0\u30e9\u30d5\u30a3\u4f5c\u54c1\u3002\u300c\u98a8\u300d\u3092\u30b3\u30f3\u30bb\u30d7\u30c8\u306b\u3057\u305f\u30dc\u30c7\u30a3\u30ef\u30fc\u30af\u3068\u30a4\u30f3\u30b9\u30c8\u30e9\u30af\u30b7\u30e7\u30f3\u304b\u3089\u3001\u81ea\u5df1\u3068\u4ed6\u8005\u30fb\u7a7a\u9593\u30fb\u72b6\u6cc1\u3068\u306e\u76f8\u4e92\u4f5c\u7528\u306b\u3088\u308a\u69d8\u3005\u306a\u6b69\u884c\uff1d\u30c0\u30f3\u30b9\u304c\u751f\u6210\u3055\u308c\u308b\u3002\", \"descEn\": \"A participatory walking performance where strangers walk together for 30 minutes without words. The first original social choreography work created in Japan.\", \"tags\": [\"social\", \"participatory\"], \"location\": \"\u5317\u306e\u4e38\u516c\u5712\uff08\u6771\u4eac\uff09\", \"locationEn\": \"Kitanomaru Park, Tokyo\", \"credit\": \"\u632f\u4ed8\u30fb\u4f01\u753b\uff5cSCP\uff08\u5409\u7530\u62d3\u30fb\u4e8c\u6cb3\u8309\u8389\u9999\uff09\\n\u30a2\u30fc\u30c4\u30ab\u30a6\u30f3\u30b7\u30eb\u6771\u4eac \u52a9\u6210\", \"images\": [], \"link\": \"https://drive.google.com/file/d/1R6Mx0ShQ5li_lcuFTQ3Ma33nX4Q2CHj9/view\"}, {\"slug\": \"parliament-facilitator\", \"year\": \"2025\", \"titleJa\": \"Parliament\uff08\u30d5\u30a1\u30b7\u30ea\u30c6\u30fc\u30bf\u30fc\uff09\", \"titleEn\": \"Parliament \u2014 Facilitator\", \"descJa\": \"\u30de\u30a4\u30b1\u30eb\u30fb\u30af\u30ea\u30a8\u30f3\u516c\u8a8d\u30d5\u30a1\u30b7\u30ea\u30c6\u30fc\u30bf\u30fc\u3068\u3057\u3066\u300eParliament\u300f\u3092\u5b9f\u65bd\u3002\", \"descEn\": \"Facilitated Michael Klien's Parliament as a Klien-certified facilitator.\", \"tags\": [\"social\"], \"location\": \"Dance Base Yokohama\", \"locationEn\": \"Dance Base Yokohama\", \"credit\": \"\u30d5\u30a1\u30b7\u30ea\u30c6\u30fc\u30bf\u30fc\uff5c\u5409\u7530\u62d3\", \"images\": []}, {\"slug\": \"parliament-athens\", \"year\": \"2025\", \"titleJa\": \"Parliament\uff08\u30b3\u30a2\u30fb\u30b3\u30e9\u30dc\u30ec\u30fc\u30bf\u30fc\uff09\", \"titleEn\": \"Parliament \u2014 Core Collaborator\", \"descJa\": \"\u30ae\u30ea\u30b7\u30e3\u30fb\u30a2\u30c6\u30cd\u3067\u958b\u50ac\u3055\u308c\u305f\u56fd\u969b\u7248\u300eParliament\u300f\u306b\u30b3\u30a2\u30fb\u30b3\u30e9\u30dc\u30ec\u30fc\u30bf\u30fc\u3068\u3057\u3066\u53c2\u52a0\u3002\", \"descEn\": \"Participated as a core collaborator in the Athens international edition of Parliament.\", \"tags\": [\"social\"], \"location\": \"Benaki Museum, Athens\", \"locationEn\": \"Benaki Museum, Athens\", \"credit\": \"\u30b3\u30a2\u30fb\u30b3\u30e9\u30dc\u30ec\u30fc\u30bf\u30fc\uff5c\u5409\u7530\u62d3\", \"images\": []}, {\"slug\": \"parliament-japan\", \"year\": \"2025\", \"titleJa\": \"Parliament\uff08\u65e5\u672c\u521d\u958b\u50ac\uff09\", \"titleEn\": \"Parliament \u2014 Japan premiere\", \"descJa\": \"\u30de\u30a4\u30b1\u30eb\u30fb\u30af\u30ea\u30a8\u30f3\u306e\u4ee3\u8868\u7684\u30bd\u30fc\u30b7\u30e3\u30eb\u30fb\u30b3\u30ec\u30aa\u30b0\u30e9\u30d5\u30a3\u4f5c\u54c1\u3092\u65e5\u672c\u3067\u521d\u3081\u3066\u4f01\u753b\u30fb\u958b\u50ac\u3002\", \"descEn\": \"Organized and hosted the first Japanese presentation of Parliament by Michael Klien.\", \"tags\": [\"social\", \"organization\"], \"location\": \"\u307f\u306a\u3068\u30b3\u30e2\u30f3\u30ba\uff08\u6771\u4eac\uff09\", \"locationEn\": \"Minato Commons, Tokyo\", \"credit\": \"\u4f01\u753b\uff5c\u5409\u7530\u62d3\", \"images\": []}, {\"slug\": \"gravity\", \"year\": \"2024\", \"titleJa\": \"\u91cd\u529b\u6d3b\u52d5\u5831\u544a\", \"titleEn\": \"Gravity Activity Report\", \"descJa\": \"\", \"descEn\": \"\", \"tags\": [\"works\"], \"images\": []}, {\"slug\": \"scissor\", \"year\": \"2023\", \"titleJa\": \"\u30cf\u30b5\u30df\u304a\u3069\u308a\u306e\u307b\u3068\u308a\", \"titleEn\": \"At the Edge of Scissor Dance\", \"descJa\": \"\u30da\u30eb\u30fc\u306e\u6c11\u65cf\u97f3\u697d\u5bb6\u30fb\u30a4\u30eb\u30de\u30fb\u30aa\u30b9\u30ce\u3068\u306e\u5171\u4f5c\u3002\", \"descEn\": \"Co-created with Peruvian folk musician Irma Osno.\", \"tags\": [\"works\"], \"credit\": \"\u5171\u4f5c\uff1a\u30a4\u30eb\u30de\u30fb\u30aa\u30b9\u30ce\\n\u73fe\u4ee3\u821e\u8e0a\u5354\u4f1a \u52a9\u6210\", \"images\": []}, {\"slug\": \"partial-errors\", \"year\": \"2023\", \"titleJa\": \"Partial Errors\", \"titleEn\": \"Partial Errors\", \"descJa\": \"\", \"descEn\": \"\", \"tags\": [\"works\"], \"images\": []}, {\"slug\": \"snakes\", \"year\": \"2022\", \"titleJa\": \"\u86c7\u3055\u3048\u3082\u900f\u660e\", \"titleEn\": \"Even Snakes Are Transparent\", \"descJa\": \"\u90fd\u5e02\u306e\u4e2d\u306b\u8eab\u4f53\u3068\u65e5\u5e38\u7684\u306a\u30de\u30c6\u30ea\u30a2\u30eb\u3092\u6301\u3061\u8fbc\u307f\u3001\u305d\u306e\u76f8\u4e92\u4f5c\u7528\u304b\u3089\u300c\u7121\u610f\u8b58\uff1d\u81ea\u7136\u300d\u3092\u7acb\u3061\u4e0a\u3052\u308b\u5287\u5834\u4f5c\u54c1\u3002\\n\\n\u300c\u610f\u60f3\u5916\u306e\u30a2\u30a4\u30c7\u30a2\u3067\u9ed9\u3005\u3068\u9042\u884c\u3055\u308c\u3066\u3086\u304f\u884c\u70ba\u304c\u7acb\u3061\u4e0a\u3052\u308b\u300e\u51fa\u6765\u4e8b\u300f\u2026\u2026\u30a8\u30ed\u30c1\u30c3\u30af\u3068\u8a00\u3063\u3066\u3082\u3044\u3044\u89e6\u611f\u3092\u7a7a\u9593\u306b\u6e80\u305f\u3059\u3053\u3068\u306b\u6210\u529f\u3057\u3066\u3044\u305f\u3002\u300d\uff08\u4f50\u3005\u6728\u6566 / \u6279\u8a55\u5bb6\uff09\", \"descEn\": \"A theatre work conjuring the unconscious through the body's interaction with everyday materials in urban space.\\n\\n\\\"An 'event' raised by acts of determined silence through unexpected ideas... succeeded in filling the space with a tactile quality one might call erotic.\\\" (Atsushi Sasaki / critic)\", \"tags\": [\"works\"], \"location\": \"\u30a2\u30c8\u30ea\u30a8\u7b2cQ\u82b8\u8853\uff08\u6771\u4eac\uff09\", \"locationEn\": \"Atelier Dai-Q Geijutsu, Tokyo\", \"credit\": \"\u30b3\u30ec\u30aa\u30b0\u30e9\u30d5\u30a3\u30fc\u30fb\u51fa\u6f14\uff5c\u5409\u7530\u62d3\\n\u51fa\u6f14\uff5c\u85e4\u4e95\u53cb\u7f8e\\n\u30a2\u30fc\u30c4\u30ab\u30a6\u30f3\u30b7\u30eb\u6771\u4eac \u52a9\u6210\", \"link\": \"https://www.youtube.com/watch?v=m2x33mVerw8\", \"images\": []}, {\"slug\": \"wooden\", \"year\": \"2021\", \"titleJa\": \"Wooden Connection\", \"titleEn\": \"Wooden Connection\", \"descJa\": \"\u30d1\u30d5\u30a9\u30fc\u30de\u30f3\u30b9\u30a2\u30fc\u30c6\u30a3\u30b9\u30c8\u30fb\u5c0f\u6797\u52c7\u8f1d\u3068\u306e\u5171\u4f5c\u3002\", \"descEn\": \"Co-created with performance artist Yuki Kobayashi.\", \"tags\": [\"works\"], \"credit\": \"\u5171\u4f5c\uff1a\u5c0f\u6797\u52c7\u8f1d\", \"images\": []}, {\"slug\": \"midnight\", \"year\": \"2021\", \"titleJa\": \"MIDNIGHT ROOM\", \"titleEn\": \"MIDNIGHT ROOM\", \"descJa\": \"\u6620\u50cf\u4f5c\u54c1\u3002\", \"descEn\": \"Video work.\", \"tags\": [\"works\"], \"images\": []}, {\"slug\": \"faint-light\", \"year\": \"2024\", \"titleJa\": \"\u304b\u3059\u304b\u306a\u3072\u304b\u308a\u3001\u3072\u307f\u3064\u306e\u304a\u3069\u308a\", \"titleEn\": \"Faint Light, Secret Dance\", \"descJa\": \"\u30c0\u30f3\u30b9\u7d4c\u9a13\u4e0d\u554f\u3002\u80fd\u52d5\u7684\u306b\u30c0\u30f3\u30b9\u3092\u4f53\u9a13\u3059\u308b\u30d7\u30ed\u30b0\u30e9\u30e0\u3002\u4e0d\u5b9a\u671f\u958b\u50ac\u3002\", \"descEn\": \"Open to all. An ongoing participatory dance program.\", \"tags\": [\"participatory\"], \"images\": []}, {\"slug\": \"dialogue\", \"year\": \"2024\", \"titleJa\": \"\u30c0\u30a4\u30a2\u30ed\u30fc\u30b0\u30fb\u30b3\u30ec\u30aa\u30b0\u30e9\u30d5\u30a3\", \"titleEn\": \"Dialogue Choreography\", \"descJa\": \"\u5bfe\u8a71\u3068\u632f\u4ed8\u3092\u7d44\u307f\u5408\u308f\u305b\u305f\u30ef\u30fc\u30af\u30b7\u30e7\u30c3\u30d7\u3002\", \"descEn\": \"Workshop combining dialogue and choreography.\", \"tags\": [\"participatory\"], \"images\": []}, {\"slug\": \"out-of-range\", \"year\": \"2024\", \"titleJa\": \"\u570f\u5916 vol.1\u20134\", \"titleEn\": \"Out of Range vol.1\u20134\", \"descJa\": \"\u30a2\u30fc\u30c6\u30a3\u30b9\u30c8\u304c\u65e2\u5b58\u306e\u67a0\u7d44\u307f\u306b\u6349\u308f\u308c\u306a\u3044\u30a2\u30a4\u30c7\u30a2\u3092\u767a\u8868\u3059\u308b\u30b7\u30ea\u30fc\u30ba\u4f01\u753b\u3002\", \"descEn\": \"A series presenting artists' ideas unconstrained by existing frameworks.\", \"tags\": [\"organization\"], \"images\": []}, {\"slug\": \"weekends\", \"year\": \"2024\", \"titleJa\": \"WEEKENDs\", \"titleEn\": \"WEEKENDs\", \"descJa\": \"\u300c\u30b3\u30f3\u30c6\u30f3\u30dd\u30e9\u30ea\u30fc\u30c0\u30f3\u30b9\u306e\u518d\u691c\u8a0e\u300d\u3092\u30c6\u30fc\u30de\u306b6\u30d7\u30ed\u30b0\u30e9\u30e0\u3067\u69cb\u6210\u3057\u305f\u30a4\u30d9\u30f3\u30c8\u30b7\u30ea\u30fc\u30ba\u3002\\n\u30a2\u30fc\u30c4\u30ab\u30a6\u30f3\u30b7\u30eb\u6771\u4eac \u52a9\u6210\u3002\", \"descEn\": \"Six-program event series re-examining contemporary dance. Supported by Arts Council Tokyo.\", \"tags\": [\"organization\"], \"images\": []}, {\"slug\": \"stilllive\", \"year\": \"2021\u2013\", \"titleJa\": \"Stilllive\", \"titleEn\": \"Stilllive\", \"descJa\": \"\u30b3\u30f3\u30c6\u30f3\u30dd\u30e9\u30ea\u30fc\u30fb\u30a2\u30fc\u30c6\u30a3\u30b9\u30c8\u306e\u30d1\u30d5\u30a9\u30fc\u30de\u30f3\u30b9\u30fb\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u3002\u56fd\u5185\u5916\u3067\u8a088\u56de\u306e\u30d1\u30d5\u30a9\u30fc\u30de\u30f3\u30b9\u30fb\u30bb\u30c3\u30b7\u30e7\u30f3\u306b\u53c2\u52a0\u30fb\u51fa\u6f14\u3002\", \"descEn\": \"A performance platform for contemporary artists. Participated as performer in 8 sessions in Japan and abroad.\", \"tags\": [\"collaborative\"], \"credit\": \"Performer\", \"images\": []}, {\"slug\": \"pito\", \"year\": \"2024\u2013\", \"titleJa\": \"pito\", \"titleEn\": \"pito\", \"descJa\": \"VR\u7814\u7a76\u8005\u30fb\u30e1\u30c7\u30a3\u30a2\u30a2\u30fc\u30c6\u30a3\u30b9\u30c8\u3068\u5171\u306b\u8a2d\u7acb\u3057\u305f\u30a2\u30fc\u30c6\u30a3\u30b9\u30c8\u30fb\u30b3\u30df\u30e5\u30cb\u30c6\u30a3\u3002\u6ede\u5728\u578b\u30af\u30ea\u30a8\u30a4\u30b7\u30e7\u30f3\u3084\u5354\u50cd\u30d1\u30d5\u30a9\u30fc\u30de\u30f3\u30b9\u3092\u884c\u3063\u3066\u3044\u308b\u3002\", \"descEn\": \"An artist community co-founded with VR researchers and media artists. Engages in residency-based creation and collaborative performance.\", \"tags\": [\"collaborative\"], \"credit\": \"Co-founder & Participant\", \"images\": []}, {\"slug\": \"annual-report\", \"year\": \"2020\u2013\", \"titleJa\": \"Dance Base Yokohama \u30a2\u30cb\u30e5\u30a2\u30eb\u30ec\u30dd\u30fc\u30c8\", \"titleEn\": \"DBY Annual Report\", \"descJa\": \"\u30c0\u30f3\u30b9\u5c02\u9580\u65bd\u8a2d\u306e\u30a2\u30cb\u30e5\u30a2\u30eb\u30ec\u30dd\u30fc\u30c8\u306e\u7de8\u96c6\u30fb\u57f7\u7b46\u62c5\u5f53\u3002\", \"descEn\": \"Editor and writer for the Dance Base Yokohama annual report.\", \"tags\": [\"organization\"], \"images\": []}]"),
+  profile:{
+    photo:'https://drive.google.com/file/d/1QnMosy7iJxb_L2HE645jvt6g6f0RVVEG/view?usp=drive_link',
+    photoCredit:'Ryo Mitamura',
+    baseLabelJa:'拠点',
+    baseLabelEn:'Base',
+    baseJa:'東京',
+    baseEn:'Tokyo',
+    platformsLabelJa:'プラットフォーム',
+    platformsLabelEn:'Platforms',
+    platforms:'Stilllive (2021–)\npito (2024–)',
+    affiliationLabelJa:'所属',
+    affiliationLabelEn:'Affiliation',
+    affiliation:'Dance Base Yokohama',
+    email:'taku88yoshida@gmail.com',
+    instagram:'ytaku',
+    instagramUrl:'https://www.instagram.com/ytaku/',
+    availabilityJa:'出演・振付依頼、ワークショップ、レクチャー、企画協力など、お気軽にご連絡ください。',
+    availabilityEn:'Available for performance, choreography, workshops, lectures, and curatorial collaborations. Inquiries welcome.',
+    ja:'東京を拠点にダンスやパフォーマンス、参加型プログラムなど、さまざまな身体実践を行う。\n\n0歳時に罹患したアトピー性皮膚炎により、心身が環境と絶えず交渉し続ける経験から「関係性の交点としての身体」という問いを軸に活動を展開。演劇、コンテンポラリーダンス、パフォーマンスを経験した後に、欧州発のダンス分野「ソーシャル・コレオグラフィ」と出会う。\n\nソーシャル・コレオグラフィの日本における先駆的実践者として、マイケル・クリエンの代表作『Parliament』を2025年に国内初開催に携わり、ギリシャ・アテネでの『Parliament』へコア・コラボレーターとして参加。その後、Dance Base Yokohamaにて継続的に『Parliament』を企画・開催している。二河茉莉香と共作した参加型ウォーキング・パフォーマンス『編路 / HENRO』（2025年）は、国内で初めて創作されたソーシャル・コレオグラフィ作品。見知らぬ他者とペアになり、言葉を用いずに歩行を共にすることで、他者・環境・身体が互いに振り付け合う。\n\n東西の医学と精神療法を用いる病院での参与観察（2023年–）を重ねながら、心身と環境の相関関係について実践的探求を続けている。\n\nDance Base Yokohamaでのアニュアルレポート編集（2020年–）、パフォーマンス・プラットフォーム「Stilllive」への参加（2021年–）、アーティスト・コミュニティ「pito」の共同設立（2024年）など、実践・記録・対話を横断しながら活動を展開している。',
+    en:'Based in Tokyo, Yoshida works across dance, performance, and participatory programs — a range of embodied practices grounded in a single inquiry: the body as an intersection of relationships. Born with atopic dermatitis, he has lived with a body in constant negotiation with its environment, an experience that became the foundation of his practice. After working in theatre, contemporary dance, and performance art, he encountered social choreography — a field of practice originating in Europe.\n\nAs a pioneering practitioner of social choreography in Japan, Yoshida was involved in the first Japanese presentation of Michael Klien\'s Parliament (2025), participated as a core collaborator in Parliament at the Benaki Museum in Athens, and has continued to organize and present the work at Dance Base Yokohama. HENRO (2025), co-created with Marika Futakawa, is the first original social choreography work made in Japan. Strangers pair up and walk together without words, allowing body, other, and environment to choreograph one another.\n\nSince 2023, Yoshida has conducted ongoing participant observation at a clinic practicing both Eastern and Western medicine and psychotherapy, pursuing an embodied inquiry into the relationship between body, mind, and environment.\n\nHe also serves as annual report editor for Dance Base Yokohama (2020–), participates in performance sessions with the platform Stilllive (2021–), and co-founded the interdisciplinary artist community pito (2024). His work moves fluidly across performance, documentation, facilitation, and collective inquiry.'
+  },
+  timeline:[
+    {year:'2011',ja:'桜美林大学 総合文化学群 演劇専修 卒業',en:'Graduated, J.F. Oberlin University, Theatre Studies'},
+    {year:'2012–2013',ja:'桜美林大学 舞台芸術研究所',en:'Institute for Performing Arts, J.F. Oberlin University'},
+    {year:'2017–2019',ja:'VACANT（ダンス・映画・音楽等のイベント企画・実施）',en:'VACANT — producing events in dance, film, and music'},
+    {year:'2020–',ja:'Dance Base Yokohama（アニュアルレポート編集）',en:'Dance Base Yokohama — annual report editor'},
+    {year:'2023–',ja:'つゆくさ医院にて参与観察（東洋医学・精神療法）',en:'Participant observation, Tsuyukusa Clinic'},
+    {year:'2024–',ja:'アーティスト・コミュニティ「pito」設立',en:"Co-founded artist community 'pito'"},
+  ],
+  grants:[
+    {year:'2025',ja:'ソーシャル・コレオグラフィ作品「編路」',en:'Social Choreography Work "HENRO"',org:'アーツカウンシル東京',orgEn:'Arts Council Tokyo'},
+    {year:'2024',ja:'イベントシリーズ「WEEKENDs」',en:'Event Series "WEEKENDs"',org:'アーツカウンシル東京',orgEn:'Arts Council Tokyo'},
+    {year:'2023',ja:'アウトリーチ作品「ハサミおどりのほとり」',en:'Outreach Work "At the Edge of Scissor Dance"',org:'現代舞踊協会',orgEn:'Japan Contemporary Dance Network'},
+    {year:'2022',ja:'劇場作品「蛇さえも透明」',en:'Theatre Work "Even Snakes Are Transparent"',org:'アーツカウンシル東京',orgEn:'Arts Council Tokyo'}
+  ],
+  lectures:[
+    {year:'2025',ja:'明治学院大学 ゲスト講師（担当：越智雄磨）',en:'Guest Lecturer, Meiji Gakuin University (host: Yuma Ochi)'},
+    {year:'2024',ja:'舞踊学会ニュースレターにインタビュー掲載（インタビュアー：外山紀久子 埼玉大学名誉教授）',en:'Interview, Dance Research Society Newsletter (interviewer: Kikuko Toyama, Professor Emerita, Saitama University)',url:'https://www.danceresearch.jp/newsletter/Newsletter22.pdf'}
+  ]
+};
+
+// Load from localStorage if available
+// バージョンが変わったら古いキャッシュを破棄して最新のデフォルトを使う
+const DATA_VERSION='v2026-07-15';
+(function(){
+  try{
+    const ver=localStorage.getItem('yt_data_ver');
+    if(ver===DATA_VERSION){
+      const s=localStorage.getItem('yt_data');
+      if(s){
+        const saved=JSON.parse(s);
+        // テキスト系フィールドはデフォルトを維持し、ユーザーが編集した works/timeline/grants/photo のみ復元
+        DATA.works=saved.works||DATA.works;
+        DATA.timeline=saved.timeline||DATA.timeline;
+        DATA.grants=saved.grants||DATA.grants;
+        if(saved.lectures)DATA.lectures=saved.lectures;
+        if(saved.profile){
+          // 管理画面で変更可能なフィールドはすべて saved から復元する
+          const pf=[
+            'photo','photoCredit',
+            'baseLabelJa','baseLabelEn','baseJa','baseEn',
+            'platformsLabelJa','platformsLabelEn','platforms',
+            'affiliationLabelJa','affiliationLabelEn','affiliation',
+            'email','instagram','instagramUrl',
+            'availabilityJa','availabilityEn',
+            'ja','en'
+          ];
+          pf.forEach(k=>{
+            if(saved.profile[k]!==undefined) DATA.profile[k]=saved.profile[k];
+          });
+        }
+        if(saved.contactText)DATA.contactText=saved.contactText;
+      }
+    } else {
+      // バージョン不一致 → 古いデータを破棄
+      localStorage.removeItem('yt_data');
+      localStorage.setItem('yt_data_ver',DATA_VERSION);
+    }
+  }catch(e){}
+})();
+function persist(){try{
+  // テキストをユーザーが編集したことを記録
+  if(DATA.profile)DATA.profile._userEdited=true;
+  localStorage.setItem('yt_data',JSON.stringify(DATA));
+  localStorage.setItem('yt_data_ver',DATA_VERSION);
+}catch(e){}}
+
+
+// Google Drive URLを表示可能な形式に変換
+function gdUrl(url){
+  if(!url) return url;
+  const m=url.match(/\/file\/d\/([^/?]+)/);
+  if(m) return `https://drive.google.com/thumbnail?id=${m[1]}&sz=w1200`;
+  return url;
+}
+
+// ─── LANG ───
+let lang='ja';
+function setLang(l){
+  lang=l;
+  document.documentElement.lang=l==='en'?'en':'ja';
+  document.getElementById('lb-ja').classList.toggle('on',l==='ja');
+  document.getElementById('lb-en').classList.toggle('on',l==='en');
+  rerender();
+}
+const t=(ja,en)=>lang==='ja'?ja:en;
+
+// ─── TAG LABELS ───
+const TAGS={
+  works:{ja:'作品',en:'Works'},
+  social:{ja:'ソーシャル・コレオグラフィ',en:'Social Choreography'},
+  collaborative:{ja:'協働',en:'Collaboration'},
+  participatory:{ja:'参加型',en:'Participatory'},
+  organization:{ja:'企画・編集',en:'Curation / Editing'},
+};
+
+// ═══════════════════════════════════════════════════════════
+//  SLIDESHOW
+// ═══════════════════════════════════════════════════════════
+let slideIdx=0, slideTimer=null;
+function buildSlideshow(){
+  const ss=document.getElementById('slideshow');
+  ss.querySelectorAll('.slide').forEach(s=>s.remove());
+  const arrowL=document.getElementById('arrowL');
+  const dotsEl=document.getElementById('dots');
+  // 画像がある作品のみ表示
+  const showWorks=DATA.works.filter(w=>w.images&&w.images.length>0);
+  if(!showWorks.length){
+    // 全作品を表示（画像なし）
+    DATA.works.forEach((w,i)=>addSlide(ss,arrowL,w,i===0));
+    dotsEl.innerHTML=DATA.works.map((w,i)=>`<button class="dot${i===0?' on':''}" onclick="goSlide(${i})"></button>`).join('');
+  } else {
+    showWorks.forEach((w,i)=>addSlide(ss,arrowL,w,i===0));
+    dotsEl.innerHTML=showWorks.map((w,i)=>`<button class="dot${i===0?' on':''}" onclick="goSlide(${i})"></button>`).join('');
+  }
+  slideIdx=0;
+  updateCounter();
+  startSlideAuto();
+}
+function addSlide(ss,arrowL,w,isFirst){
+  const s=document.createElement('div');
+  s.className='slide'+(isFirst?' active':'');
+  s.dataset.slug=w.slug;
+  const img=w.images&&w.images[0];
+  const imgEl=img
+    ?`<img src="${gdUrl(img)}" alt="${w.titleJa}" loading="lazy" onerror="this.style.display='none'">`
+    :`<div class="slide-placeholder">—</div>`;
+  // 英訳が日本語と異なる場合のみ表示
+  const hasEn=w.titleEn&&w.titleEn!==w.titleJa;
+  s.innerHTML=`
+    <div class="slide-img-wrap">${imgEl}</div>
+    <div class="slide-info">
+      <div class="slide-title-wrap" onclick="showWork('${w.slug}')">
+        <span class="slide-title">${w.titleJa||w.titleEn}</span>
+        ${hasEn?`<span class="slide-title-en">${w.titleEn}</span>`:''}
+      </div>
+      <div class="slide-meta">${w.year}${w.location?' — '+(lang==='en'&&w.locationEn?w.locationEn:w.location):''}</div>
+    </div>`;
+  ss.insertBefore(s,arrowL);
+}
+function updateCounter(){
+  const c=document.getElementById('slide-counter');
+  if(c)c.textContent=String(slideIdx+1).padStart(2,'0')+' / '+String(DATA.works.length).padStart(2,'0');
+}
+function goSlide(n){
+  const slides=document.querySelectorAll('#slideshow .slide');
+  const dots=document.querySelectorAll('.dot');
+  if(!slides.length)return;
+  slides[slideIdx].classList.remove('active');
+  dots[slideIdx]&&dots[slideIdx].classList.remove('on');
+  slideIdx=((n%slides.length)+slides.length)%slides.length;
+  slides[slideIdx].classList.add('active');
+  dots[slideIdx]&&dots[slideIdx].classList.add('on');
+  updateCounter();
+}
+function slidePrev(){stopAuto();goSlide(slideIdx-1);startSlideAuto();}
+function slideNext(){stopAuto();goSlide(slideIdx+1);startSlideAuto();}
+function startSlideAuto(){stopAuto();slideTimer=setInterval(()=>goSlide(slideIdx+1),5000);}
+function stopAuto(){if(slideTimer){clearInterval(slideTimer);slideTimer=null;}}
+
+// ═══════════════════════════════════════════════════════════
+//  NAV WORKS LIST
+// ═══════════════════════════════════════════════════════════
+function buildNavWorks(){
+  const yrs=[...new Set(DATA.works.map(w=>w.year))].sort((a,b)=>b.localeCompare(a));
+  document.getElementById('nav-works').innerHTML=yrs.map(yr=>{
+    const ws=DATA.works.filter(w=>w.year===yr);
+    const id='ny'+yr.replace(/\W/g,'');
+    return `<div class="nav-yr-head" onclick="toggleYr(this,'${id}')">${yr}</div>
+    <div class="nav-yr-links" id="${id}">
+      ${ws.map(w=>`<a href="#" onclick="showWork('${w.slug}');return false;" id="nw-${w.slug}">${lang==='ja'?w.titleJa:w.titleEn}</a>`).join('')}
+    </div>`;
+  }).join('');
+}
+function toggleYr(el,id){
+  el.classList.toggle('shut');
+  const d=document.getElementById(id);
+  d.style.display=el.classList.contains('shut')?'none':'';
+}
+
+// ═══════════════════════════════════════════════════════════
+//  PAGES
+// ═══════════════════════════════════════════════════════════
+let currentSlug=null;
+function go(name,skipNav){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+  document.getElementById('page-'+name).classList.add('on');
+  document.querySelectorAll('[id^=nl-]').forEach(a=>a.classList.remove('on'));
+  const nl=document.getElementById('nl-'+name);
+  if(nl)nl.classList.add('on');
+  closeMobNav();
+  window.scrollTo(0,0);
+  if(name==='about')renderAbout();
+  if(name==='contact')renderContact();
+  if(name==='home')buildSlideshow();
+}
+
+function showWork(slug){
+  const w=DATA.works.find(x=>x.slug===slug);
+  if(!w)return;
+  currentSlug=slug;
+  const idx=DATA.works.indexOf(w);
+  const prev=DATA.works[idx-1],next=DATA.works[idx+1];
+  const imgs=w.images&&w.images.length
+    ?w.images.map(s=>`<img src="${gdUrl(s)}" alt="${w.titleJa}" onerror="this.style.display='none'">`).join('')
+    :'';
+  const desc=lang==='ja'?w.descJa:w.descEn;
+  document.getElementById('work-content').innerHTML=`
+    <div class="work-title">${lang==='ja'?w.titleJa:w.titleEn}</div>
+    ${w.titleEn!==w.titleJa&&lang==='ja'?`<div class="work-title-en">${w.titleEn}</div>`:''}
+    <div class="work-meta">
+      <span>${w.year}</span>
+      ${w.location?`<span>${lang==='en'&&w.locationEn?w.locationEn:w.location}</span>`:''}
+      <span>${w.tags.map(tg=>TAGS[tg]?.[lang==='ja'?'ja':'en']||tg).join(' · ')}</span>
+    </div>
+    <div class="work-imgs">${imgs}</div>
+    ${desc?`<div class="work-desc">${desc}</div>`:''}
+    ${w.credit?`<div class="work-credit">${w.credit}</div>`:''}
+    ${w.link?`<a href="${w.link}" target="_blank" class="work-link-btn">▶ ${t('映像・資料を見る','View documentation')}</a>`:''}
+    <div class="work-pager">
+      <span>${prev?`<a href="#" onclick="showWork('${prev.slug}');return false;">← ${t(prev.titleJa,prev.titleEn)}</a>`:''}</span>
+      <a href="#" onclick="go('home');return false;">← ${t('一覧','All works')}</a>
+      <span>${next?`<a href="#" onclick="showWork('${next.slug}');return false;">${t(next.titleJa,next.titleEn)} →</a>`:''}</span>
+    </div>
+    <button class="page-edit-btn" onclick="authAdmin('works');setTimeout(()=>editWork('${w.slug}'),200)" title="この作品を編集">✏</button>`;
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+  document.getElementById('page-work').classList.add('on');
+  document.querySelectorAll('[id^=nl-]').forEach(a=>a.classList.remove('on'));
+  closeMobNav();
+  window.scrollTo(0,0);
+}
+
+// ─── ABOUT ───
+function renderAbout(){
+  document.getElementById('about-h').textContent='Biography';
+  const ah=document.getElementById('archive-h');
+  if(ah)ah.textContent=t('アーカイブ','Archive');
+  // プロフィール写真
+  const photoWrap=document.getElementById('about-photo');
+  if(photoWrap){
+    if(DATA.profile.photo){
+      const credit=DATA.profile.photoCredit?`© ${DATA.profile.photoCredit}`:'';
+      // Google Drive の /view URLを直リンクに変換
+      let photoSrc=DATA.profile.photo||'';
+      const gdMatch=photoSrc.match(/\/file\/d\/([^/]+)/);
+      if(gdMatch)photoSrc=`https://drive.google.com/thumbnail?id=${gdMatch[1]}&sz=w800`;
+      photoWrap.innerHTML=`<div class="about-photo-wrap"><img src="${photoSrc}" alt="Taku Yoshida" onerror="this.closest('.about-photo-wrap').style.display='none';document.getElementById('about-bio-grid').classList.add('no-photo')">${credit?`<div class="about-photo-caption">${credit}</div>`:''}</div>`;
+      // 写真URLがない場合も no-photo クラスを付与
+      if(!DATA.profile.photo){
+        const grid=document.getElementById('about-bio-grid');
+        if(grid)grid.classList.add('no-photo');
+      } else {
+        const grid=document.getElementById('about-bio-grid');
+        if(grid)grid.classList.remove('no-photo');
+      }
+    } else {
+      photoWrap.innerHTML='';
+    }
+  }
+  const body=lang==='ja'?DATA.profile.ja:DATA.profile.en;
+  const autoTransNote=lang==='en'&&DATA.autoTranslated&&DATA.autoTranslated['prof-en']?`<p style="margin-top:2rem;">${autoTransBadge()}</p>`:'';
+  document.getElementById('about-body').innerHTML=body.split('\n\n').map(p=>`<p>${p}</p>`).join('')+autoTransNote;
+  const platforms=(DATA.profile.platforms||'').split('\n').filter(Boolean).join('<br>');
+  const affiliation=DATA.profile.affiliation||'';
+  const base=lang==='ja'?(DATA.profile.baseJa||''):(DATA.profile.baseEn||'');
+  const email=DATA.profile.email||'';
+  const instagram=DATA.profile.instagram||'';
+  const instagramUrl=DATA.profile.instagramUrl||'';
+  document.getElementById('about-dl').innerHTML=`
+    ${base?`<dt>${lang==='ja'?(DATA.profile.baseLabelJa||'拠点'):(DATA.profile.baseLabelEn||'Base')}</dt><dd>${base}</dd>`:''}
+    ${platforms?`<dt>${lang==='ja'?(DATA.profile.platformsLabelJa||'プラットフォーム'):(DATA.profile.platformsLabelEn||'Platforms')}</dt><dd>${platforms}</dd>`:''}
+    ${affiliation?`<dt>${lang==='ja'?(DATA.profile.affiliationLabelJa||'所属'):(DATA.profile.affiliationLabelEn||'Affiliation')}</dt><dd>${affiliation}</dd>`:''}
+    ${email?`<dt>Email</dt><dd><a href="mailto:${email}">${email}</a></dd>`:''}
+    ${instagram?`<dt>Instagram</dt><dd><a href="${instagramUrl||'https://www.instagram.com/'+instagram+'/'}" target="_blank">@${instagram}</a></dd>`:''}
+  `;
+  renderCV();
+  renderArchive();
+}
+
+// ─── CV ───
+function renderCV(){
+  const lectures=DATA.lectures||[];
+  document.getElementById('cv-body').innerHTML=`
+    <div>
+      <span class="cv-sub">${t('学歴・職歴','Education & Career')}</span>
+      <div class="tl">
+        ${DATA.timeline.map(i=>`<div class="tl-item">
+          <div class="tl-yr">${i.year}</div>
+          <div class="tl-tx">${t(i.ja,i.en)}</div>
+        </div>`).join('')}
+      </div>
+    </div>
+    <div>
+      <span class="cv-sub">${t('助成・受賞','Grants & Awards')}</span>
+      <ul class="grants">
+        ${DATA.grants.map(g=>`<li>
+          <span class="g-yr">${g.year}</span>
+          <span class="g-body">${t(g.ja,g.en)}<span class="g-org">${lang==='en'&&g.orgEn?g.orgEn:g.org}</span></span>
+        </li>`).join('')}
+      </ul>
+    </div>
+    ${lectures.length?`<div>
+      <span class="cv-sub">${t('講義・インタビュー','Lectures & Interviews')}</span>
+      <ul class="grants">
+        ${lectures.map(l=>`<li>
+          <span class="g-yr">${l.year}</span>
+          <span class="g-body">${l.url?`<a href="${l.url}" target="_blank" rel="noopener">${t(l.ja,l.en)}</a>`:t(l.ja,l.en)}</span>
+        </li>`).join('')}
+      </ul>
+    </div>`:''}`;
+}
+
+// ─── ARCHIVE ───
+function renderArchive(){
+  const filterBar = document.getElementById('filterBar');
+  const grid = document.getElementById('worksGrid');
+  if(!filterBar || !grid) return;
+
+  const allTags = ['all','works','social','collaborative','participatory','organization'];
+  const tagLabels = {
+    all:          {ja:'すべて',          en:'All'},
+    works:        {ja:'作品',            en:'Works'},
+    social:       {ja:'ソーシャル・コレオグラフィ', en:'Social Choreography'},
+    collaborative:{ja:'協働的実践',      en:'Collaborative Practice'},
+    participatory:{ja:'参加型',          en:'Participatory'},
+    organization: {ja:'企画・編集',      en:'Curation / Editing'},
+  };
+
+  // フィルターボタン生成
+  filterBar.innerHTML = allTags.map(tag=>`
+    <button
+      class="arch-btn${tag==='all'?' on':''}"
+      onclick="setArchiveFilter('${tag}',this)"
+    >${lang==='ja'?tagLabels[tag].ja:tagLabels[tag].en}</button>
+  `).join('');
+
+  renderArchiveGrid('all');
+}
+
+function renderArchiveGrid(filter){
+  const grid = document.getElementById('worksGrid');
+  if(!grid) return;
+  const works = filter==='all'
+    ? DATA.works
+    : DATA.works.filter(w=>w.tags&&w.tags.includes(filter));
+
+  grid.innerHTML = works.map(w=>`
+    <div class="arch-row" onclick="showWork('${w.slug}')">
+      <span class="arch-yr">${w.year}</span>
+      <span class="arch-title">${lang==='ja'?w.titleJa:w.titleEn}</span>
+      ${w.titleEn&&w.titleEn!==w.titleJa&&lang==='ja'
+        ?`<span class="arch-title-en">${w.titleEn}</span>`:''}
+      <span class="arch-tags">${(w.tags||[]).map(tg=>TAGS[tg]?.[lang==='ja'?'ja':'en']||tg).join(' · ')}</span>
+    </div>
+  `).join('');
+}
+
+function setArchiveFilter(tag, btn){
+  document.querySelectorAll('.arch-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  renderArchiveGrid(tag);
+}
+
+// ─── CONTACT ───
+function renderContact(){
+  const btn=document.getElementById('cf-btn');
+  if(btn)btn.textContent='Send / 送信';
+  // Availability テキスト（DATA.profile から取得、なければ contactText にフォールバック）
+  const desc=document.getElementById('contact-desc');
+  if(desc){
+    const avail=lang==='ja'
+      ?(DATA.profile.availabilityJa||DATA.contactText?.ja||'')
+      :(DATA.profile.availabilityEn||DATA.contactText?.en||'');
+    desc.textContent=avail;
+  }
+  const name=document.getElementById('cf-name');
+  const email=document.getElementById('cf-email');
+  const subj=document.getElementById('cf-subj');
+  const msg=document.getElementById('cf-msg');
+  if(name)name.placeholder=t('お名前','Name');
+  if(email)email.placeholder='Email';
+  if(subj)subj.placeholder=t('件名','Subject');
+  if(msg)msg.placeholder=t('メッセージ','Message');
+}
+async function submitContact(e){
+  e.preventDefault();
+  const btn=document.getElementById('cf-btn');
+  const ok=document.getElementById('cf-ok');
+  if(!btn||!ok)return;
+  btn.disabled=true;
+  btn.textContent=t('送信中...','Sending...');
+  const data={
+    name:document.getElementById('cf-name').value,
+    email:document.getElementById('cf-email').value,
+    subject:document.getElementById('cf-subj').value,
+    message:document.getElementById('cf-msg').value,
+    _replyto:document.getElementById('cf-email').value,
+    _subject:'[yoshida-taku.com] '+(document.getElementById('cf-subj').value||'お問い合わせ'),
+  };
+  try{
+    const res=await fetch('https://formspree.io/f/taku88yoshida@gmail.com',{
+      method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(data)
+    });
+    if(res.ok){
+      ok.style.display='block';
+      ok.textContent=t('ありがとうございます。まもなくご連絡いたします。','Thank you. We will be in touch soon.');
+      ok.style.color='#333';
+      e.target.reset();
+    } else {
+      throw new Error('failed');
+    }
+  } catch(err){
+    ok.style.display='block';
+    const em=DATA.profile.email||'taku88yoshida@gmail.com';
+    ok.textContent=t('送信できませんでした。'+em+' までご連絡ください。','Could not send. Please email '+em+' directly.');
+    ok.style.color='#c00';
+  }
+  btn.disabled=false;
+  btn.textContent='Send / 送信';
+}
+
+function rerender(){
+  buildNavWorks();
+  buildSlideshow();
+  const active=document.querySelector('.page.on');
+  if(active){
+    const id=active.id.replace('page-','');
+    if(id==='work'&&currentSlug)showWork(currentSlug);
+    else if(id==='about'){renderAbout();}
+    else if(id==='contact')renderContact();
+  }
+}
+
+// ─── MOBILE ───
+function toggleMobNav(){
+  document.getElementById('nav').classList.toggle('open');
+}
+function closeMobNav(){
+  document.getElementById('nav').classList.remove('open');
+}
+
+// ═══════════════════════════════════════════════════════════
+//  ADMIN APP
+// ═══════════════════════════════════════════════════════════
+let editSlug=null;
+
+// ─── ADMIN AUTH ───
+const ADMIN_PASS='taku2025'; // ★ パスワードはここを変更してください
+let adminUnlocked=false;
+function authAdmin(tab){
+  if(adminUnlocked){openAdmin(tab);return;}
+  const pw=prompt('Password:');
+  if(pw===null)return;
+  if(pw===ADMIN_PASS){adminUnlocked=true;openAdmin(tab);}
+  else{alert('Wrong password.');}
+}
+function openAdmin(tab){
+  document.getElementById('admin-overlay').classList.add('on');
+  renderAdmWorkList();
+  loadProfileEditor();
+  loadCVEditor();
+  loadContactEditor();
+  if(tab){
+    const btn=document.querySelector(`.adm-nav-btn[data-sec="${tab}"]`);
+    if(btn)admTab(btn,tab);
+  }
+  // show font switcher
+  const fsw=document.getElementById('font-switcher');
+  if(fsw)fsw.classList.add('visible');
+}
+function closeAdmin(){
+  document.getElementById('admin-overlay').classList.remove('on');
+  rerender();
+}
+function admTab(btn,sec){
+  document.querySelectorAll('.adm-nav-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.adm-section').forEach(s=>s.classList.remove('on'));
+  document.getElementById('adm-'+sec).classList.add('on');
+}
+
+// ── Works list ──
+function renderAdmWorkList(){
+  document.getElementById('adm-work-list').innerHTML=DATA.works.map(w=>`
+    <div class="adm-work-row">
+      <span class="adm-work-yr">${w.year}</span>
+      <span class="adm-work-name">${w.titleJa}</span>
+      <span class="adm-work-tag">${w.tags.join(', ')}</span>
+      <div class="adm-work-btns">
+        <button onclick="editWork('${w.slug}')">Edit</button>
+        <button onclick="moveWork('${w.slug}',-1)">↑</button>
+        <button onclick="moveWork('${w.slug}',1)">↓</button>
+      </div>
+    </div>`).join('');
+}
+function moveWork(slug,dir){
+  const idx=DATA.works.findIndex(w=>w.slug===slug);
+  const ni=idx+dir;
+  if(ni<0||ni>=DATA.works.length)return;
+  [DATA.works[idx],DATA.works[ni]]=[DATA.works[ni],DATA.works[idx]];
+  persist();renderAdmWorkList();
+}
+
+// ── New / Edit Work ──
+function startNewWork(){
+  editSlug=null;
+  document.getElementById('del-btn').style.display='none';
+  clearWorkForm();
+  document.getElementById('work-edit-panel').classList.add('on');
+  document.getElementById('we-year').focus();
+}
+function editWork(slug){
+  const w=DATA.works.find(x=>x.slug===slug);
+  if(!w)return;
+  editSlug=slug;
+  document.getElementById('del-btn').style.display='';
+  document.getElementById('we-year').value=w.year||'';
+  document.getElementById('we-titleJa').value=w.titleJa||'';
+  document.getElementById('we-titleEn').value=w.titleEn||'';
+  document.getElementById('we-loc').value=w.location||'';
+  document.getElementById('we-link').value=w.link||'';
+  document.getElementById('we-descJa').value=w.descJa||'';
+  document.getElementById('we-descEn').value=w.descEn||'';
+  document.getElementById('we-credit').value=w.credit||'';
+  document.getElementById('we-imgs').value=(w.images||[]).join('\n');
+  ['works','social','collaborative','participatory','organization'].forEach(tg=>{
+    document.getElementById('tag-'+tg).checked=(w.tags||[]).includes(tg);
+  });
+  document.getElementById('work-edit-panel').classList.add('on');
+  document.getElementById('work-edit-panel').scrollIntoView({behavior:'smooth'});
+}
+function clearWorkForm(){
+  ['year','titleJa','titleEn','loc','link','descJa','descEn','credit','imgs'].forEach(k=>document.getElementById('we-'+k).value='');
+  ['works','social','collaborative','participatory','organization'].forEach(tg=>document.getElementById('tag-'+tg).checked=false);
+}
+function cancelEdit(){
+  document.getElementById('work-edit-panel').classList.remove('on');
+  editSlug=null;
+}
+function saveWork(){
+  const titleJa=document.getElementById('we-titleJa').value.trim();
+  const titleEn=document.getElementById('we-titleEn').value.trim();
+  if(!titleJa&&!titleEn){showMsg('we-msg','タイトルを入力してください',false);return;}
+  const tags=['works','social','collaborative','participatory','organization'].filter(tg=>document.getElementById('tag-'+tg).checked);
+  const imgs=document.getElementById('we-imgs').value.split('\n').map(s=>s.trim()).filter(Boolean);
+  const year=document.getElementById('we-year').value.trim();
+  const w={
+    slug:editSlug||(titleEn||titleJa).toLowerCase().replace(/[^a-z0-9]/g,'-').replace(/-+/g,'-')+'-'+Date.now(),
+    year,titleJa,titleEn,
+    descJa:document.getElementById('we-descJa').value.trim(),
+    descEn:document.getElementById('we-descEn').value.trim(),
+    tags,location:document.getElementById('we-loc').value.trim(),
+    credit:document.getElementById('we-credit').value.trim(),
+    link:document.getElementById('we-link').value.trim(),
+    images:imgs
+  };
+  if(editSlug){
+    const idx=DATA.works.findIndex(x=>x.slug===editSlug);
+    DATA.works[idx]=w;
+  } else {
+    DATA.works.unshift(w);
+  }
+  persist();
+  renderAdmWorkList();
+  showMsg('we-msg','Saved ✓',true);
+  setTimeout(()=>document.getElementById('work-edit-panel').classList.remove('on'),800);
+}
+function deleteWork(){
+  if(!editSlug)return;
+  if(!confirm('この作品を削除しますか？'))return;
+  DATA.works=DATA.works.filter(w=>w.slug!==editSlug);
+  persist();renderAdmWorkList();
+  document.getElementById('work-edit-panel').classList.remove('on');
+  editSlug=null;
+}
+
+// ── Profile editor ──
+function loadProfileEditor(){
+  document.getElementById('prof-photo').value=DATA.profile.photo||'';
+  document.getElementById('prof-photo-credit').value=DATA.profile.photoCredit||'';
+  document.getElementById('prof-base-label-ja').value=DATA.profile.baseLabelJa||'';
+  document.getElementById('prof-base-label-en').value=DATA.profile.baseLabelEn||'';
+  document.getElementById('prof-base-ja').value=DATA.profile.baseJa||'';
+  document.getElementById('prof-base-en').value=DATA.profile.baseEn||'';
+  document.getElementById('prof-platforms-label-ja').value=DATA.profile.platformsLabelJa||'';
+  document.getElementById('prof-platforms-label-en').value=DATA.profile.platformsLabelEn||'';
+  document.getElementById('prof-platforms').value=DATA.profile.platforms||'';
+  document.getElementById('prof-affiliation-label-ja').value=DATA.profile.affiliationLabelJa||'';
+  document.getElementById('prof-affiliation-label-en').value=DATA.profile.affiliationLabelEn||'';
+  document.getElementById('prof-affiliation').value=DATA.profile.affiliation||'';
+  document.getElementById('prof-email').value=DATA.profile.email||'';
+  document.getElementById('prof-instagram').value=DATA.profile.instagram||'';
+  document.getElementById('prof-avail-ja').value=DATA.profile.availabilityJa||'';
+  document.getElementById('prof-avail-en').value=DATA.profile.availabilityEn||'';
+  document.getElementById('prof-ja').value=DATA.profile.ja||'';
+  document.getElementById('prof-en').value=DATA.profile.en||'';
+}
+function saveProfile(){
+  DATA.profile.photo=document.getElementById('prof-photo').value.trim();
+  DATA.profile.photoCredit=document.getElementById('prof-photo-credit').value.trim();
+  DATA.profile.baseLabelJa=document.getElementById('prof-base-label-ja').value.trim();
+  DATA.profile.baseLabelEn=document.getElementById('prof-base-label-en').value.trim();
+  DATA.profile.baseJa=document.getElementById('prof-base-ja').value.trim();
+  DATA.profile.baseEn=document.getElementById('prof-base-en').value.trim();
+  DATA.profile.platformsLabelJa=document.getElementById('prof-platforms-label-ja').value.trim();
+  DATA.profile.platformsLabelEn=document.getElementById('prof-platforms-label-en').value.trim();
+  DATA.profile.platforms=document.getElementById('prof-platforms').value.trim();
+  DATA.profile.affiliationLabelJa=document.getElementById('prof-affiliation-label-ja').value.trim();
+  DATA.profile.affiliationLabelEn=document.getElementById('prof-affiliation-label-en').value.trim();
+  DATA.profile.affiliation=document.getElementById('prof-affiliation').value.trim();
+  DATA.profile.email=document.getElementById('prof-email').value.trim();
+  DATA.profile.instagram=document.getElementById('prof-instagram').value.trim();
+  DATA.profile.availabilityJa=document.getElementById('prof-avail-ja').value.trim();
+  DATA.profile.availabilityEn=document.getElementById('prof-avail-en').value.trim();
+  DATA.profile.ja=document.getElementById('prof-ja').value.trim();
+  DATA.profile.en=document.getElementById('prof-en').value.trim();
+  persist();showMsg('prof-msg','Saved ✓',true);
+}
+// ── Contact text editor ──
+function loadContactEditor(){
+  if(!DATA.contactText)DATA.contactText={ja:'',en:''};
+  const ja=document.getElementById('ct-ja');
+  const en=document.getElementById('ct-en');
+  if(ja)ja.value=DATA.contactText.ja||DATA.profile.availabilityJa||'出演・振付依頼、コラボレーション、取材など、お気軽にご連絡ください。';
+  if(en)en.value=DATA.contactText.en||DATA.profile.availabilityEn||'For performance commissions, collaborations, and press inquiries, please get in touch.';
+}
+function saveContactText(){
+  if(!DATA.contactText)DATA.contactText={};
+  DATA.contactText.ja=document.getElementById('ct-ja').value.trim();
+  DATA.contactText.en=document.getElementById('ct-en').value.trim();
+  persist();renderContact();showMsg('ct-msg','Saved ✓',true);
+}
+
+// ── CV editor ──
+function loadCVEditor(){
+  document.getElementById('cv-tl').value=DATA.timeline.map(i=>`${i.year}\t${i.ja}\t${i.en}`).join('\n');
+  document.getElementById('cv-gr').value=DATA.grants.map(g=>`${g.year}\t${g.ja}\t${g.en}\t${g.org}`).join('\n');
+  const lec=DATA.lectures||[];
+  document.getElementById('cv-lec').value=lec.map(l=>`${l.year}\t${l.ja}\t${l.en}${l.url?'\t'+l.url:''}`).join('\n');
+}
+function saveCV(){
+  DATA.timeline=document.getElementById('cv-tl').value.trim().split('\n').filter(Boolean).map(l=>{
+    const p=l.split('\t');return{year:p[0]||'',ja:p[1]||'',en:p[2]||''};
+  });
+  DATA.grants=document.getElementById('cv-gr').value.trim().split('\n').filter(Boolean).map(l=>{
+    const p=l.split('\t');return{year:p[0]||'',ja:p[1]||'',en:p[2]||'',org:p[3]||''};
+  });
+  DATA.lectures=document.getElementById('cv-lec').value.trim().split('\n').filter(Boolean).map(l=>{
+    const p=l.split('\t');return{year:p[0]||'',ja:p[1]||'',en:p[2]||'',url:p[3]||''};
+  });
+  persist();showMsg('cv-msg','Saved ✓',true);
+}
+
+// ── Export / Import ──
+function exportJSON(){
+  const blob=new Blob([JSON.stringify(DATA,null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download='yoshida-site-data.json';a.click();
+  document.getElementById('exp-msg').textContent='Exported ✓';
+}
+function importJSON(e){
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=ev=>{try{DATA=JSON.parse(ev.target.result);persist();rerender();renderAdmWorkList();loadProfileEditor();loadCVEditor();document.getElementById('exp-msg').textContent='Imported ✓';}catch(err){alert('Invalid JSON');}};
+  r.readAsText(f);
+}
+function importFromText(){
+  const s=document.getElementById('imp-text').value.trim();
+  if(!s)return;
+  try{DATA=JSON.parse(s);persist();rerender();renderAdmWorkList();loadProfileEditor();loadCVEditor();document.getElementById('exp-msg').textContent='Imported ✓';}
+  catch(err){alert('Invalid JSON');}
+}
+function generateHTML(){
+  // inject current DATA into page source and trigger download
+  const src=document.documentElement.outerHTML;
+  const injected=src.replace(/let DATA = \{[\s\S]*?\};\s*\/\/ Load from/,
+    `let DATA = ${JSON.stringify(DATA,null,2)};\n// Load from`);
+  const blob=new Blob([injected],{type:'text/html'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download='index.html';a.click();
+  document.getElementById('exp-msg').textContent='HTML generated and downloaded ✓';
+}
+
+function showMsg(id,msg,ok){
+  const el=document.getElementById(id);
+  el.style.display='block';
+  el.textContent=msg;
+  el.style.color=ok?'#006600':'#cc0000';
+  setTimeout(()=>el.style.display='none',2500);
+}
+
+// ═══════════════════════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════════════════════
+// keyboard navigation
+document.addEventListener('keydown',e=>{
+  const home=document.getElementById('page-home');
+  if(home&&home.classList.contains('on')){
+    if(e.key==='ArrowLeft')slidePrev();
+    if(e.key==='ArrowRight')slideNext();
+  }
+});
+
+document.getElementById("foot-copy").textContent="© "+new Date().getFullYear()+" 吉田 拓 / Taku Yoshida — Tokyo";
+buildNavWorks();
+buildSlideshow();
+
+// ── FONT SWITCHER ──
+const FONTS = {
+  zen:      "'Zen Kaku Gothic New','Noto Sans JP',sans-serif",
+  shippori: "'Shippori Antique','Noto Sans JP',sans-serif",
+  mplus:    "'M PLUS 1','Noto Sans JP',sans-serif",
+  biz:      "'BIZ UDGothic','Noto Sans JP',sans-serif",
+  noto:     "'Noto Sans JP',sans-serif",
+};
+function setFont(key){
+  document.documentElement.style.setProperty('--sans', FONTS[key]);
+  document.querySelectorAll('.fsw-btn').forEach(b=>b.classList.remove('on'));
+  document.querySelector(`.fsw-btn[onclick="setFont('${key}')"]`).classList.add('on');
+  try{localStorage.setItem('yt_font',key);}catch(e){}
+}
+// font switcher shown inside openAdmin()
+// restore saved font
+(function(){
+  try{
+    // Zen Kaku Gothic New を既定フォントとして固定
+    localStorage.setItem('yt_font','zen');
+    setFont('zen');
+  }catch(e){}
+})();
+
+
+// ═══════════════════════════════════════════════════════════
+//  AUTO TRANSLATION (Claude API)
+// ═══════════════════════════════════════════════════════════
+// 自動翻訳されたフィールドを追跡
+if(!DATA.autoTranslated) DATA.autoTranslated={};
+
+async function callClaude(prompt){
+  const res=await fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      model:'claude-sonnet-4-6',
+      max_tokens:1000,
+      messages:[{role:'user',content:prompt}]
+    })
+  });
+  if(!res.ok) throw new Error('API error '+res.status);
+  const data=await res.json();
+  return data.content[0].text.trim();
+}
+
+// 単フィールドの翻訳
+async function translateField(srcId, dstId, btn, allowOverwrite=false){
+  const srcEl=document.getElementById(srcId);
+  const dstEl=document.getElementById(dstId);
+  if(!srcEl||!dstEl) return;
+  const srcText=srcEl.value.trim();
+  if(!srcText){alert('翻訳元のテキストを入力してください。');return;}
+  if(dstEl.value.trim()&&!allowOverwrite){
+    if(!confirm('英語テキストが既に入力されています。上書きしますか？')) return;
+  }
+  btn.disabled=true;
+  const origText=btn.textContent;
+  btn.textContent='翻訳中...';
+  try{
+    const result=await callClaude(
+      'Translate the following Japanese text about a contemporary artist/choreographer into natural English. '+
+      'Return only the translated text with no preamble, explanation, or quotation marks.\n\n'+srcText
+    );
+    dstEl.value=result;
+    // 自動翻訳フラグを記録
+    DATA.autoTranslated[dstId]=true;
+    btn.textContent='✓ 翻訳完了';
+    btn.style.color='var(--text)';
+    btn.style.borderColor='var(--text)';
+    setTimeout(()=>{btn.textContent=origText;btn.style.color='';btn.style.borderColor='';btn.disabled=false;},2000);
+  }catch(e){
+    btn.textContent='✗ エラー（APIキーを確認）';
+    btn.style.color='#c00';
+    setTimeout(()=>{btn.textContent=origText;btn.style.color='';btn.disabled=false;},3000);
+  }
+}
+
+// 未翻訳の作品を一括翻訳
+async function translateAllWorks(btn){
+  const untranslated=DATA.works.filter(w=>w.descJa&&!w.descEn);
+  if(!untranslated.length){
+    alert('未翻訳の作品はありません。（descJaがあってdescEnが空の作品が対象です）');
+    return;
+  }
+  if(!confirm(`${untranslated.length}件の作品を自動翻訳します。よろしいですか？`)) return;
+  btn.disabled=true;
+  const msgEl=document.getElementById('translate-all-msg');
+  msgEl.style.display='block';
+  let done=0;
+  for(const w of untranslated){
+    msgEl.textContent=`翻訳中... ${done+1}/${untranslated.length}件 「${w.titleJa}」`;
+    try{
+      const result=await callClaude(
+        'Translate the following Japanese text about a contemporary dance/choreography work into natural English. '+
+        'Return only the translated text with no preamble, explanation, or quotation marks.\n\n'+w.descJa
+      );
+      const work=DATA.works.find(x=>x.slug===w.slug);
+      if(work){
+        work.descEn=result;
+        if(!work.autoTranslated) work.autoTranslated={};
+        work.autoTranslated.descEn=true;
+      }
+      done++;
+    }catch(e){
+      msgEl.textContent=`エラーが発生しました（${done}件完了）。APIキーを確認してください。`;
+      btn.disabled=false;
+      return;
+    }
+    await new Promise(r=>setTimeout(r,500)); // レート制限対策
+  }
+  persist();
+  renderNavWorks();
+  msgEl.textContent=`✓ ${done}件の翻訳が完了しました。各作品の説明を確認・修正してから保存してください。`;
+  btn.disabled=false;
+}
+
+// 自動翻訳バッジを表示する関数
+function autoTransBadge(){
+  return '<span class="auto-translated">Auto-translated</span>';
+}
+
+</script>
+
+<div id="font-switcher">
+  <span>字体</span>
+  <button class="fsw-btn on" onclick="setFont('zen')">Zen Kaku</button>
+  <button class="fsw-btn" onclick="setFont('shippori')">Shippori</button>
+  <button class="fsw-btn" onclick="setFont('mplus')">M PLUS 1</button>
+  <button class="fsw-btn" onclick="setFont('biz')">BIZ UD</button>
+  <button class="fsw-btn" onclick="setFont('noto')">Noto Sans</button>
+</div>
+</body>
+</html>
